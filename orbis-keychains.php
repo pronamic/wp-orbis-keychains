@@ -27,6 +27,7 @@ class Orbis_Keychains_Plugin {
 
 		include $this->dirname . '/includes/post.php';
 		include $this->dirname . '/includes/taxonomy.php';
+		include $this->dirname . '/includes/hosting.php';
 	}
 }
 
