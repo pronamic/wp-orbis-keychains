@@ -24,7 +24,7 @@ add_action( 'add_meta_boxes', 'orbis_domain_names_add_meta_boxes' );
 function orbis_domain_name_keychains_meta_box( $post ) {
 	global $orbis_keychains_plugin;
 
-	include dirname( $orbis_keychains_plugin->file ) . '/admin/meta-box-domain-name-keychains.php';
+	$orbis_keychains_plugin->plugin_include( 'admin/meta-box-domain-name-keychains.php' );
 }
 
 /**

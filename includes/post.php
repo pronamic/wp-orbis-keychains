@@ -21,7 +21,7 @@ function orbis_keychains_create_initial_post_types() {
 			) ,
 			'public'          => true,
 			'menu_position'   => 30,
-			'menu_icon'       => plugins_url( 'images/keychain.png', $orbis_keychains_plugin->file ),
+			'menu_icon'       => $orbis_keychains_plugin->plugin_url( 'images/keychain.png' ),
 			'capability_type' => array( 'keychain', 'keychains' ),
 			'supports'        => array( 'title', 'editor', 'author', 'comments' ),
 			'has_archive'     => true,
@@ -51,23 +51,23 @@ function orbis_keychain_setup_roles() {
 
 	$roles = array(
 		'administrator' => array(
-			'display_name' => __('Administrator', 'orbis') ,
+			'display_name' => __( 'Administrator', 'orbis' ),
 			'capabilities' => array_merge( $default_capabilities, array(
 
 			) )
 		) ,
 		'editor' => array(
-			'display_name' => __('Editor', 'orbis') ,
+			'display_name' => __( 'Editor', 'orbis' ),
 			'capabilities' => array_merge( $default_capabilities, array(
 				'edit_others_keychains' => false
 			) )
 		)
 	);
 
-	orbis_update_roles($roles);
+	orbis_update_roles( $roles );
 }
 
-function orbis_update_roles($roles) {
+function orbis_update_roles( $roles ) {
 	global $wp_roles;
 
 	if ( ! isset( $wp_roles ) ) {

@@ -18,19 +18,12 @@ License: GPL
 GitHub URI: https://github.com/pronamic/wp-orbis-keychains
 */
 
-class Orbis_Keychains_Plugin {
-	public $file;
+function orbis_keychains_init() {
+	include 'classes/orbis-keychains-plugin.php';
 
-	public function __construct( $file ) {
-		$this->file    = $file;
-		$this->dirname = dirname( $file );
-
-		include $this->dirname . '/includes/post.php';
-		include $this->dirname . '/includes/taxonomy.php';
-		include $this->dirname . '/includes/hosting.php';
-	}
+	global $orbis_keychains_plugin;
+	
+	$orbis_keychains_plugin = new Orbis_Keychains_Plugin( __FILE__ );
 }
 
-global $orbis_keychains_plugin;
-
-$orbis_keychains_plugin = new Orbis_Keychains_Plugin( __FILE__ );
+add_action( 'orbis_init', 'orbis_keychains_init' );
