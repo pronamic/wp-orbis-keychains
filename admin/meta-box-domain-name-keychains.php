@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+global $post;
 
 wp_nonce_field( 'orbis_save_domain_name_keychains', 'orbis_domain_name_keychains_meta_box_nonce' );
 
