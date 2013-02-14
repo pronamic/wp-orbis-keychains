@@ -9,22 +9,22 @@ function orbis_keychains_create_initial_taxonomies() {
 		array(
 			'hierarchical' => true,
 			'labels'       => array(
-				'name'              => _x( 'Categories', 'orbis_keychain_category', 'orbis' ),
-				'singular_name'     => _x( 'Category', 'orbis_keychain_category', 'orbis' ),
-				'search_items'      => __( 'Search Categories', 'orbis' ),
-				'all_items'         => __( 'All Categories', 'orbis' ),
-				'parent_item'       => __( 'Parent Category', 'orbis' ),
-				'parent_item_colon' => __( 'Parent Category:', 'orbis' ),
-				'edit_item'         => __( 'Edit Category', 'orbis' ),
-				'update_item'       => __( 'Update Category', 'orbis' ),
-				'add_new_item'      => __( 'Add New Category', 'orbis' ),
-				'new_item_name'     => __( 'New Category Name', 'orbis' ),
-				'menu_name'         => __( 'Categories', 'orbis' )
+				'name'              => _x( 'Categories', 'orbis_keychain_category', 'orbis_keychains' ),
+				'singular_name'     => _x( 'Category', 'orbis_keychain_category', 'orbis_keychains' ),
+				'search_items'      => __( 'Search Categories', 'orbis_keychains' ),
+				'all_items'         => __( 'All Categories', 'orbis_keychains' ),
+				'parent_item'       => __( 'Parent Category', 'orbis_keychains' ),
+				'parent_item_colon' => __( 'Parent Category:', 'orbis_keychains' ),
+				'edit_item'         => __( 'Edit Category', 'orbis_keychains' ),
+				'update_item'       => __( 'Update Category', 'orbis_keychains' ),
+				'add_new_item'      => __( 'Add New Category', 'orbis_keychains' ),
+				'new_item_name'     => __( 'New Category Name', 'orbis_keychains' ),
+				'menu_name'         => __( 'Categories', 'orbis_keychains' )
 			),
 			'show_ui'      => true, 
 			'query_var'    => true, 
 			'rewrite'      => array(
-				'slug' => _x( 'keychain-categorie', 'slug', 'orbis' )
+				'slug' => _x( 'keychain-categorie', 'slug', 'orbis_keychains' )
 			)
 		)
 	);
@@ -35,22 +35,22 @@ function orbis_keychains_create_initial_taxonomies() {
 		array(
 			'hierarchical' => false,
 			'labels'       => array(
-				'name'              => _x( 'Tags', 'orbis_keychain_category', 'orbis'),
-				'singular_name'     => _x( 'Tag', 'orbis_keychain_category', 'orbis'),
-				'search_items'      => __( 'Search Tags', 'orbis' ),
-				'all_items'         => __( 'All Tags', 'orbis' ),
-				'parent_item'       => __( 'Parent Tag', 'orbis' ),
-				'parent_item_colon' => __( 'Parent Tag:', 'orbis' ),
-				'edit_item'         => __( 'Edit Tag', 'orbis' ),
-				'update_item'       => __( 'Update Tag', 'orbis' ),
-				'add_new_item'      => __( 'Add New Tag', 'orbis' ),
-				'new_item_name'     => __( 'New Tag Name', 'orbis' ),
-				'menu_name'         => __( 'Tags', 'orbis' )
+				'name'              => _x( 'Tags', 'orbis_keychain_category', 'orbis_keychains' ),
+				'singular_name'     => _x( 'Tag', 'orbis_keychain_category', 'orbis_keychains' ),
+				'search_items'      => __( 'Search Tags', 'orbis_keychains' ),
+				'all_items'         => __( 'All Tags', 'orbis_keychains' ),
+				'parent_item'       => __( 'Parent Tag', 'orbis_keychains' ),
+				'parent_item_colon' => __( 'Parent Tag:', 'orbis_keychains' ),
+				'edit_item'         => __( 'Edit Tag', 'orbis_keychains' ),
+				'update_item'       => __( 'Update Tag', 'orbis_keychains' ),
+				'add_new_item'      => __( 'Add New Tag', 'orbis_keychains' ),
+				'new_item_name'     => __( 'New Tag Name', 'orbis_keychains' ),
+				'menu_name'         => __( 'Tags', 'orbis_keychains' )
 			),
 			'show_ui'      => true,
 			'query_var'    => true,
 			'rewrite'      => array(
-				'slug' => _x( 'keychain-tag', 'slug', 'orbis' )
+				'slug' => _x( 'keychain-tag', 'slug', 'orbis_keychains' )
 			)
 		)
 	);

@@ -8,4 +8,8 @@ class Orbis_Keychains_Plugin extends Orbis_Plugin {
 		$this->plugin_include( 'includes/taxonomy.php' );
 		$this->plugin_include( 'includes/hosting.php' );
 	}
+
+	public function loaded() {
+		$this->load_textdomain( 'orbis_keychains', '/languages/' );
+	}
 }

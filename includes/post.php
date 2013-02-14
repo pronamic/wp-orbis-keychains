@@ -6,18 +6,18 @@ function orbis_keychains_create_initial_post_types() {
 	register_post_type(
 		'orbis_keychain',
 		array(
-			'label'           => __( 'Keychains', 'orbis' ),
+			'label'           => __( 'Keychains', 'orbis_keychains' ),
 			'labels'          => array(
-				'name'               => __( 'Keychains', 'orbis' ), 
-				'singular_name'      => __( 'Keychain', 'orbis' ),
-				'add_new'            => _x( 'Add New', 'orbis_keychain', 'orbis' ),
-				'add_new_item'       => __( 'Add New Keychain', 'orbis' ),
-				'edit_item'          => __( 'Edit Keychain', 'orbis' ),
-				'new_item'           => __( 'New Keychain', 'orbis' ),
-				'view_item'          => __( 'View Keychain', 'orbis' ),
-				'search_items'       => __( 'Search Keychains', 'orbis' ),
-				'not_found'          => __( 'No keychains found', 'orbis' ),
-				'not_found_in_trash' => __( 'No keychains found in Trash', 'orbis' ) 
+				'name'               => __( 'Keychains', 'orbis_keychains' ), 
+				'singular_name'      => __( 'Keychain', 'orbis_keychains' ),
+				'add_new'            => _x( 'Add New', 'orbis_keychain', 'orbis_keychains' ),
+				'add_new_item'       => __( 'Add New Keychain', 'orbis_keychains' ),
+				'edit_item'          => __( 'Edit Keychain', 'orbis_keychains' ),
+				'new_item'           => __( 'New Keychain', 'orbis_keychains' ),
+				'view_item'          => __( 'View Keychain', 'orbis_keychains' ),
+				'search_items'       => __( 'Search Keychains', 'orbis_keychains' ),
+				'not_found'          => __( 'No keychains found', 'orbis_keychains' ),
+				'not_found_in_trash' => __( 'No keychains found in Trash', 'orbis_keychains' ) 
 			) ,
 			'public'          => true,
 			'menu_position'   => 30,
@@ -25,7 +25,7 @@ function orbis_keychains_create_initial_post_types() {
 			'capability_type' => array( 'keychain', 'keychains' ),
 			'supports'        => array( 'title', 'editor', 'author', 'comments' ),
 			'has_archive'     => true,
-			'rewrite'         => array( 'slug' => _x( 'keychains', 'slug', 'orbis' ) ) 
+			'rewrite'         => array( 'slug' => _x( 'keychains', 'slug', 'orbis_keychains' ) ) 
 		)
 	);
 }
@@ -51,13 +51,13 @@ function orbis_keychain_setup_roles() {
 
 	$roles = array(
 		'administrator' => array(
-			'display_name' => __( 'Administrator', 'orbis' ),
+			'display_name' => __( 'Administrator', 'orbis_keychains' ),
 			'capabilities' => array_merge( $default_capabilities, array(
 
 			) )
 		) ,
 		'editor' => array(
-			'display_name' => __( 'Editor', 'orbis' ),
+			'display_name' => __( 'Editor', 'orbis_keychains' ),
 			'capabilities' => array_merge( $default_capabilities, array(
 				'edit_others_keychains' => false
 			) )
@@ -96,7 +96,7 @@ function orbis_update_roles( $roles ) {
 function orbis_keychain_add_meta_boxes() {
 	add_meta_box(
 		'orbis_keychain',
-		__( 'Keychain Details', 'orbis' ),
+		__( 'Keychain Details', 'orbis_keychains' ),
 		'orbis_keychain_details_meta_box',
 		'orbis_keychain',
 		'normal',
@@ -163,7 +163,7 @@ function orbis_save_keychain_details( $post_id, $post ) {
 
 		$data = array(
 			'comment_post_ID'      => $post_id,
-			'comment_content'      => __( 'I changed the password of this keychain.', 'orbis' ),
+			'comment_content'      => __( 'I changed the password of this keychain.', 'orbis_keychains' ),
 			'comment_author'       => $user->display_name,
 			'comment_author_email' => $user->user_email,
 			'comment_author_url'   => $user->user_url,
@@ -198,7 +198,7 @@ function orbis_keychain_comment_form($post_id) {
 		$str .= '<p>';
 		$str .=	'	<label class="checkbox">';
 		$str .= '		<input type="checkbox" name="orbis_keychain_password_request" value="true" /> ';
-		$str .= '		' . sprintf( __( 'Request password, describe with at least <strong>%d words</strong> why you need this password.', 'orbis' ), orbis_keychain_get_password_required_word_count() );
+		$str .= '		' . sprintf( __( 'Request password, describe with at least <strong>%d words</strong> why you need this password.', 'orbis_keychains' ), orbis_keychain_get_password_required_word_count() );
 		$str .= '	</label>';
 		$str .= '</p>';
 
@@ -249,24 +249,24 @@ function orbis_keychain_get_comment_text($text, $comment) {
 
 		$isWithinDate = $visibleTillDate->format('U') > $currentDate->format('U');
 
-		if($isCommentEnough) {
+		if ( $isCommentEnough ) {
 			$str .= '<p>';
 			$str .= '	' . sprintf(
-					__('This comment was an password request, the user can view the password till <strong>%s</strong>.', 'orbis') ,
-					$visibleTillDate->format(DATE_W3C)
+				__( 'This comment was an password request, the user can view the password till <strong>%s</strong>.', 'orbis_keychains' ),
+				$visibleTillDate->format( DATE_W3C )
 			);
 			$str .= '</p>';
 		} else {
 			$str .= '<p>';
 			$str .= '	' . sprintf(
-					__('This comment was met <strong>%d words</strong> not long enough to display the password, use at least <strong>%d words</strong>.', 'orbis') ,
-					$wordCount ,
-					$wordCountRequired
+				__( 'This comment was met <strong>%d words</strong> not long enough to display the password, use at least <strong>%d words</strong>.', 'orbis_keychains' ),
+				$wordCount,
+				$wordCountRequired
 			);
 			$str .= '</p>';
 		}
 
-		if($isCurrentUser && $isCommentEnough && $isWithinDate) {
+		if ( $isCurrentUser && $isCommentEnough && $isWithinDate ) {
 			$url = get_post_meta($comment->comment_post_ID, '_orbis_keychain_url', true);
 			$username = get_post_meta($comment->comment_post_ID, '_orbis_keychain_username', true);
 			$password = get_post_meta($comment->comment_post_ID, '_orbis_keychain_password', true);
@@ -274,19 +274,19 @@ function orbis_keychain_get_comment_text($text, $comment) {
 
 			$str .= '<dl>';
 
-			$str .= '	<dt>' . sprintf('<label for="url-field-%d">%s</label>', $comment->comment_ID, __('URL', 'orbis')) . '</dt>';
-			$str .= '	<dd>' . sprintf('<a href="%s">%s</a>', $url, $url) . '</dd>';
-			$str .= '	<dd>' . sprintf('<input id="url-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr($url)) . '</dd>';
+			$str .= '	<dt>' . sprintf( '<label for="url-field-%d">%s</label>', $comment->comment_ID, __( 'URL', 'orbis_keychains' ) ) . '</dt>';
+			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', $url, $url) . '</dd>';
+			$str .= '	<dd>' . sprintf( '<input id="url-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $url ) ) . '</dd>';
 
-			$str .= '	<dt>' . sprintf('<label for="username-field-%d">%s</label>', $comment->comment_ID, __('Username', 'orbis')) . '</dt>';
-			$str .= '	<dd>' . sprintf('<input id="username-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr($username)) . '</dd>';
+			$str .= '	<dt>' . sprintf( '<label for="username-field-%d">%s</label>', $comment->comment_ID, __( 'Username', 'orbis_keychains' ) ) . '</dt>';
+			$str .= '	<dd>' . sprintf( '<input id="username-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $username ) ) . '</dd>';
 
-			$str .= '	<dt>' . sprintf('<label for="password-field-%d">%s</label>', $comment->comment_ID, __('Password', 'orbis')) . '</dt>';
-			$str .= '	<dd>' . sprintf('<input id="password-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr($password)) . '</dd>';
+			$str .= '	<dt>' . sprintf( '<label for="password-field-%d">%s</label>', $comment->comment_ID, __( 'Password', 'orbis_keychains' ) ) . '</dt>';
+			$str .= '	<dd>' . sprintf( '<input id="password-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $password ) ) . '</dd>';
 
-			if(!empty($email)) {
-				$str .= '	<dt>' . sprintf('<label for="email-field-%d">%s</label>', $comment->comment_ID, __('E-mail Address', 'orbis')) . '</dt>';
-				$str .= '	<dd>' . sprintf('<input id="email-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr($email)) . '</dd>';
+			if ( ! empty( $email ) ) {
+				$str .= '	<dt>' . sprintf( '<label for="email-field-%d">%s</label>', $comment->comment_ID, __( 'E-mail Address', 'orbis_keychains' ) ) . '</dt>';
+				$str .= '	<dd>' . sprintf( '<input id="email-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $email ) ) . '</dd>';
 			}
 
 			$str .= '</dl>';
@@ -317,17 +317,17 @@ function orbis_keychain_the_content($content) {
 
 		$str .= '<dl>';
 
-		$str .= '	<dt>' . __( 'URL', 'orbis' ) . '</dt>';
+		$str .= '	<dt>' . __( 'URL', 'orbis_keychains' ) . '</dt>';
 		$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', $url, $url ) . '</dd>';
 
-		$str .= '	<dt>' . __( 'Username', 'orbis' ) . '</dt>';
+		$str .= '	<dt>' . __( 'Username', 'orbis_keychains' ) . '</dt>';
 		$str .= '	<dd>' . sprintf( '<input type="text" value="%s" readonly="readonly" />', esc_attr( $username ) ) . '</dd>';
 
-		$str .= '	<dt>' . __( 'Password', 'orbis' ) . '</dt>';
+		$str .= '	<dt>' . __( 'Password', 'orbis_keychains' ) . '</dt>';
 		$str .= '	<dd>' . '********' . '</dd>';
 
 		if ( ! empty( $email ) ) {
-			$str .= '	<dt>' . __( 'E-mail Address', 'orbis' ) . '</dt>';
+			$str .= '	<dt>' . __( 'E-mail Address', 'orbis_keychains' ) . '</dt>';
 			$str .= '	<dd>' . sprintf( '<a href="mailto:%s">%s</a>', $email, $email ) . '</dd>';
 		}
 
@@ -347,15 +347,15 @@ add_filter( 'the_content', 'orbis_keychain_the_content' );
 function orbis_keychain_edit_columns( $columns ) {
 	return array(
 		'cb'                        => '<input type="checkbox" />',
-		'title'                     => __( 'Title', 'orbis'),
-		'orbis_keychain_url'        => __( 'URL', 'orbis'),
-		'orbis_keychain_username'   => __( 'Username', 'orbis' ),
-		'orbis_keychain_email'      => __( 'E-mail Address', 'orbis' ),
-		'author'                    => __( 'Author', 'orbis' ),
-		'orbis_keychain_categories' => __( 'Categories', 'orbis' ),
-		'orbis_keychain_tags'       => __( 'Tags', 'orbis' ),
-		'comments'                  => __( 'Comments', 'orbis' ),
-		'date'                      => __( 'Date', 'orbis' )
+		'title'                     => __( 'Title', 'orbis_keychains' ),
+		'orbis_keychain_url'        => __( 'URL', 'orbis_keychains' ),
+		'orbis_keychain_username'   => __( 'Username', 'orbis_keychains' ),
+		'orbis_keychain_email'      => __( 'E-mail Address', 'orbis_keychains' ),
+		'author'                    => __( 'Author', 'orbis_keychains' ),
+		'orbis_keychain_categories' => __( 'Categories', 'orbis_keychains' ),
+		'orbis_keychain_tags'       => __( 'Tags', 'orbis_keychains' ),
+		'comments'                  => __( 'Comments', 'orbis_keychains' ),
+		'date'                      => __( 'Date', 'orbis_keychains' )
 	);
 }
 

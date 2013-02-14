@@ -6,7 +6,7 @@
 function orbis_domain_names_add_meta_boxes() {
 	add_meta_box(
 		'orbis_domain_name_keychains',
-		__('Keychains', 'orbis'),
+		__( 'Keychains', 'orbis_keychains' ),
 		'orbis_domain_name_keychains_meta_box',
 		'orbis_domain_name',
 		'normal',
@@ -80,22 +80,22 @@ function orbis_domain_name_the_content( $content ) {
 
 		$str  = '';
 
-		$str .= '<h2>' . __( 'Keychains', 'orbis' ) . '</h2>';
+		$str .= '<h2>' . __( 'Keychains', 'orbis_keychains' ) . '</h2>';
 
 		$str .= '<dl>';
 
 		if ( ! empty( $ftpKeychainId ) ) {
-			$str .= '	<dt>' . __( 'FTP', 'orbis' ) . '</dt>';
+			$str .= '	<dt>' . __( 'FTP', 'orbis_keychains' ) . '</dt>';
 			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', get_permalink( $ftpKeychainId ), get_the_title( $ftpKeychainId ) ) . '</dd>';
 		}
 
 		if ( ! empty( $googleAppsKeychainId ) ) {
-			$str .= '	<dt>' . __( 'Google Apps', 'orbis' ) . '</dt>';
+			$str .= '	<dt>' . __( 'Google Apps', 'orbis_keychains' ) . '</dt>';
 			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', get_permalink( $googleAppsKeychainId ), get_the_title( $googleAppsKeychainId ) ) . '</dd>';
 		}
 
 		if ( ! empty( $wordPressKeychainId ) ) {
-			$str .= '	<dt>' . __( 'WordPress', 'orbis' ) . '</dt>';
+			$str .= '	<dt>' . __( 'WordPress', 'orbis_keychains' ) . '</dt>';
 			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', get_permalink( $wordPressKeychainId ), get_the_title( $wordPressKeychainId ) ) . '</dd>';
 		}
 
