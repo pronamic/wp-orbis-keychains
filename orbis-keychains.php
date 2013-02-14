@@ -18,7 +18,7 @@ License: GPL
 GitHub URI: https://github.com/pronamic/wp-orbis-keychains
 */
 
-function orbis_keychains_init() {
+function orbis_keychains_bootstrap() {
 	include 'classes/orbis-keychains-plugin.php';
 
 	global $orbis_keychains_plugin;
@@ -26,4 +26,4 @@ function orbis_keychains_init() {
 	$orbis_keychains_plugin = new Orbis_Keychains_Plugin( __FILE__ );
 }
 
-add_action( 'orbis_init', 'orbis_keychains_init' );
+add_action( 'orbis_bootstrap', 'orbis_keychains_bootstrap' );
