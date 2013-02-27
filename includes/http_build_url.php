@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * HTTP build URL
+ *
+ * @see https://github.com/ajmorris/WordPress-Minify/blob/master/http_build_url.php
+ */
   if (!function_exists('http_build_url'))
   {
     define('HTTP_URL_REPLACE', 1);          // Replace every part of the first URL when there's one of the second URL
