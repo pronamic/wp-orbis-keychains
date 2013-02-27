@@ -272,7 +272,16 @@ function orbis_keychain_get_comment_text($text, $comment) {
 			$password = get_post_meta($comment->comment_post_ID, '_orbis_keychain_password', true);
 			$email    = get_post_meta($comment->comment_post_ID, '_orbis_keychain_email', true);
 
+			$url_full = http_build_url( $url, array(
+				'user' => $username,
+				'pass' => $password
+			) );
+
 			$str .= '<dl>';
+
+			$str .= '	<dt>' . sprintf( '<label for="url-full-field-%d">%s</label>', $comment->comment_ID, __( 'URL Full', 'orbis_keychains' ) ) . '</dt>';
+			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', $url_full, $url_full ) . '</dd>';
+			$str .= '	<dd>' . sprintf( '<input id="url-full-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $url_full ) ) . '</dd>';
 
 			$str .= '	<dt>' . sprintf( '<label for="url-field-%d">%s</label>', $comment->comment_ID, __( 'URL', 'orbis_keychains' ) ) . '</dt>';
 			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', $url, $url) . '</dd>';
