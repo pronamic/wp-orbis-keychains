@@ -267,10 +267,10 @@ function orbis_keychain_get_comment_text($text, $comment) {
 		}
 
 		if ( $isCurrentUser && $isCommentEnough && $isWithinDate ) {
-			$url = get_post_meta($comment->comment_post_ID, '_orbis_keychain_url', true);
+			$url      = get_post_meta($comment->comment_post_ID, '_orbis_keychain_url', true);
 			$username = get_post_meta($comment->comment_post_ID, '_orbis_keychain_username', true);
 			$password = get_post_meta($comment->comment_post_ID, '_orbis_keychain_password', true);
-			$email = get_post_meta($comment->comment_post_ID, '_orbis_keychain_email', true);
+			$email    = get_post_meta($comment->comment_post_ID, '_orbis_keychain_email', true);
 
 			$str .= '<dl>';
 
