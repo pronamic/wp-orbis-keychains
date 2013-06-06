@@ -13,4 +13,10 @@ class Orbis_Keychains_Plugin extends Orbis_Plugin {
 	public function loaded() {
 		$this->load_textdomain( 'orbis_keychains', '/languages/' );
 	}
+
+	public function install() {
+		orbis_keychain_setup_roles();
+
+		parent::install();
+	}
 }
