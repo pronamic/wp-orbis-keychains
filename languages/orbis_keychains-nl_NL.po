@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis Keychains\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-27 10:40+0100\n"
-"PO-Revision-Date: 2013-02-27 11:43+0100\n"
+"POT-Creation-Date: 2013-06-06 13:40+0100\n"
+"PO-Revision-Date: 2013-06-06 13:40+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -30,7 +30,7 @@ msgid "WordPress"
 msgstr "WordPress"
 
 #: admin/meta-box-keychain-details.php:11 includes/post.php:286
-#: includes/post.php:329 includes/post.php:360
+#: includes/post.php:330 includes/post.php:369
 msgid "URL"
 msgstr "URL"
 
@@ -43,17 +43,17 @@ msgstr ""
 "<code>ftp://</code>, voor SFTP <code>sftp://</code>"
 
 #: admin/meta-box-keychain-details.php:20 includes/post.php:290
-#: includes/post.php:332 includes/post.php:361
+#: includes/post.php:333 includes/post.php:370
 msgid "Username"
 msgstr "Gebruikersnaam"
 
 #: admin/meta-box-keychain-details.php:28 includes/post.php:293
-#: includes/post.php:335
+#: includes/post.php:336
 msgid "Password"
 msgstr "Wachtwoord"
 
 #: admin/meta-box-keychain-details.php:36 includes/post.php:297
-#: includes/post.php:339 includes/post.php:362
+#: includes/post.php:340 includes/post.php:371
 msgid "E-mail Address"
 msgstr "E-mailadres"
 
@@ -151,27 +151,31 @@ msgstr ""
 msgid "URL Full"
 msgstr "URL volledig"
 
-#: includes/post.php:359
+#: includes/post.php:350
+msgid "Login"
+msgstr "Inloggen"
+
+#: includes/post.php:368
 msgid "Title"
 msgstr "Titel"
 
-#: includes/post.php:363
+#: includes/post.php:372
 msgid "Author"
 msgstr "Auteur"
 
-#: includes/post.php:364 includes/taxonomy.php:22
+#: includes/post.php:373 includes/taxonomy.php:22
 msgid "Categories"
 msgstr "Categorieën"
 
-#: includes/post.php:365 includes/taxonomy.php:48
+#: includes/post.php:374 includes/taxonomy.php:48
 msgid "Tags"
 msgstr "Tags"
 
-#: includes/post.php:366
+#: includes/post.php:375
 msgid "Comments"
 msgstr "Reacties"
 
-#: includes/post.php:367
+#: includes/post.php:376
 msgid "Date"
 msgstr "Datum"
 
