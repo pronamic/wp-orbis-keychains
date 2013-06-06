@@ -314,13 +314,14 @@ add_filter( 'comment_text', 'orbis_keychain_get_comment_text', 20, 2 );
 /**
  * Keychain content
 */
-function orbis_keychain_the_content($content) {
+function orbis_keychain_the_content( $content ) {
 	if ( get_post_type() == 'orbis_keychain' ) {
 		$id = get_the_ID();
 
 		$url      = get_post_meta( $id, '_orbis_keychain_url', true );
 		$email    = get_post_meta( $id, '_orbis_keychain_email', true );
 		$username = get_post_meta( $id, '_orbis_keychain_username', true );
+		$password = get_post_meta( $id, '_orbis_keychain_password', true );
 
 		$str  = '';
 
@@ -341,6 +342,14 @@ function orbis_keychain_the_content($content) {
 		}
 
 		$str .= '</dl>';
+		
+		if ( has_term( 'WordPress', 'orbis_keychain_category' ) ) {
+			$str .= sprintf( '<form method="post" action="%s" target="_blank">', esc_attr( $url ) );
+			$str .= sprintf( '<input type="hidden" value="%s" name="log" />', esc_attr( $username ) );
+			$str .= sprintf( '<input type="hidden" value="%s" name="pwd" />', esc_attr( $password ) );
+			$str .= sprintf( '<input type="submit" value="%s" name="wp-submit" />', esc_attr( __( 'Login', 'orbis_keychains' ) ) );
+			$str .= sprintf( '</form>' );
+		}
 
 		$content .= $str;
 	}
