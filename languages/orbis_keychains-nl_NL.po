@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis Keychains\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-06 13:40+0100\n"
-"PO-Revision-Date: 2013-06-06 13:40+0100\n"
-"Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
+"POT-Creation-Date: 2013-07-09 15:17+0100\n"
+"PO-Revision-Date: 2013-07-09 15:17+0100\n"
+"Last-Translator: Remco Tolsma <remco@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
-"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl_NL\n"
 "X-Poedit-KeywordsList: __;_e;_x:2c,1\n"
 "X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -17,47 +17,55 @@ msgstr ""
 "X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/meta-box-domain-name-keychains.php:11 includes/hosting.php:88
+#: admin/meta-box-domain-name-keychains.php:11
+#: includes/hosting.php:88
 msgid "FTP"
 msgstr "FTP"
 
-#: admin/meta-box-domain-name-keychains.php:19 includes/hosting.php:93
+#: admin/meta-box-domain-name-keychains.php:19
+#: includes/hosting.php:93
 msgid "Google Apps"
 msgstr "Google Apps"
 
-#: admin/meta-box-domain-name-keychains.php:27 includes/hosting.php:98
+#: admin/meta-box-domain-name-keychains.php:27
+#: includes/hosting.php:98
 msgid "WordPress"
 msgstr "WordPress"
 
-#: admin/meta-box-keychain-details.php:11 includes/post.php:286
-#: includes/post.php:330 includes/post.php:369
+#: admin/meta-box-keychain-details.php:11
+#: includes/post.php:286
+#: includes/post.php:330
+#: includes/post.php:369
 msgid "URL"
 msgstr "URL"
 
 #: admin/meta-box-keychain-details.php:15
-msgid ""
-"Use an full URL: for HTTP <code>http://</code>, for FTP <code>ftp://</code>, "
-"for SFTP <code>sftp://</code>"
-msgstr ""
-"Gebruik een volledige URL: voor HTTP <code>http://</code>, voor FTP "
-"<code>ftp://</code>, voor SFTP <code>sftp://</code>"
+msgid "Use an full URL: for HTTP <code>http://</code>, for FTP <code>ftp://</code>, for SFTP <code>sftp://</code>"
+msgstr "Gebruik een volledige URL: voor HTTP <code>http://</code>, voor FTP <code>ftp://</code>, voor SFTP <code>sftp://</code>"
 
-#: admin/meta-box-keychain-details.php:20 includes/post.php:290
-#: includes/post.php:333 includes/post.php:370
+#: admin/meta-box-keychain-details.php:20
+#: includes/post.php:290
+#: includes/post.php:333
+#: includes/post.php:370
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: admin/meta-box-keychain-details.php:28 includes/post.php:293
+#: admin/meta-box-keychain-details.php:28
+#: includes/post.php:293
 #: includes/post.php:336
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: admin/meta-box-keychain-details.php:36 includes/post.php:297
-#: includes/post.php:340 includes/post.php:371
+#: admin/meta-box-keychain-details.php:36
+#: includes/post.php:297
+#: includes/post.php:340
+#: includes/post.php:371
 msgid "E-mail Address"
 msgstr "E-mailadres"
 
-#: includes/hosting.php:9 includes/hosting.php:83 includes/post.php:9
+#: includes/hosting.php:9
+#: includes/hosting.php:83
+#: includes/post.php:9
 #: includes/post.php:11
 msgid "Keychains"
 msgstr "Sleutelhangers"
@@ -122,30 +130,18 @@ msgstr "Ik heb het wachtwoord van deze sleutelhanger gewijzigd."
 
 #: includes/post.php:201
 #, php-format
-msgid ""
-"Request password, describe with at least <strong>%d words</strong> why you "
-"need this password."
-msgstr ""
-"Wachtwoord verzoek, beschrijf met minimaal <strong>%d woorden</strong> "
-"waarom je dit wachtwoord nodig hebt."
+msgid "Request password, describe with at least <strong>%d words</strong> why you need this password."
+msgstr "Wachtwoord verzoek, beschrijf met minimaal <strong>%d woorden</strong> waarom je dit wachtwoord nodig hebt."
 
 #: includes/post.php:255
 #, php-format
-msgid ""
-"This comment was an password request, the user can view the password till "
-"<strong>%s</strong>."
-msgstr ""
-"Deze reactie was een wachtwoord verzoek, de gebruiker kan het wachtwoord "
-"bekijken tot <strong>%s</strong>."
+msgid "This comment was an password request, the user can view the password till <strong>%s</strong>."
+msgstr "Deze reactie was een wachtwoord verzoek, de gebruiker kan het wachtwoord bekijken tot <strong>%s</strong>."
 
 #: includes/post.php:262
 #, php-format
-msgid ""
-"This comment was met <strong>%d words</strong> not long enough to display "
-"the password, use at least <strong>%d words</strong>."
-msgstr ""
-"Deze reactie was met <strong>%d woorden</strong> niet lang genoeg om het "
-"wachtwoord weer te geven, gebruik minimaal <strong>%d woorden</strong>."
+msgid "This comment was met <strong>%d words</strong> not long enough to display the password, use at least <strong>%d words</strong>."
+msgstr "Deze reactie was met <strong>%d woorden</strong> niet lang genoeg om het wachtwoord weer te geven, gebruik minimaal <strong>%d woorden</strong>."
 
 #: includes/post.php:282
 msgid "URL Full"
@@ -163,11 +159,13 @@ msgstr "Titel"
 msgid "Author"
 msgstr "Auteur"
 
-#: includes/post.php:373 includes/taxonomy.php:22
+#: includes/post.php:373
+#: includes/taxonomy.php:22
 msgid "Categories"
 msgstr "Categorieën"
 
-#: includes/post.php:374 includes/taxonomy.php:48
+#: includes/post.php:374
+#: includes/taxonomy.php:48
 msgid "Tags"
 msgstr "Tags"
 
@@ -278,8 +276,8 @@ msgstr "sleutelhanger-tag"
 
 #~ msgid "Hosting Groups"
 #~ msgstr "Hosting groepen"
-
 #~ msgctxt "hosting_group"
+
 #~ msgid "Add New"
 #~ msgstr "Nieuwe toevoegen"
 
@@ -291,8 +289,8 @@ msgstr "sleutelhanger-tag"
 
 #~ msgid "Domain Name"
 #~ msgstr "Domeinnaam"
-
 #~ msgctxt "domain_name"
+
 #~ msgid "Add New"
 #~ msgstr "Nieuwe toevoegen"
 
@@ -304,8 +302,8 @@ msgstr "sleutelhanger-tag"
 
 #~ msgid "Project"
 #~ msgstr "Project"
-
 #~ msgctxt "orbis_project"
+
 #~ msgid "Add New"
 #~ msgstr "Nieuw project"
 
@@ -335,12 +333,12 @@ msgstr "sleutelhanger-tag"
 
 #~ msgid "Parent Project:"
 #~ msgstr "Bovenliggend project:"
-
 #~ msgctxt "taxonomy general name"
+
 #~ msgid "Categories"
 #~ msgstr "Categorieën"
-
 #~ msgctxt "taxonomy singular name"
+
 #~ msgid "Category"
 #~ msgstr "Categorie"
 
@@ -349,8 +347,8 @@ msgstr "sleutelhanger-tag"
 
 #~ msgid "Company"
 #~ msgstr "Bedrijf"
-
 #~ msgctxt "orbis_company"
+
 #~ msgid "Add New"
 #~ msgstr "Nieuw bedrijf"
 
@@ -380,8 +378,8 @@ msgstr "sleutelhanger-tag"
 
 #~ msgid "Parent Company:"
 #~ msgstr "Bovenliggend bedrijf:"
-
 #~ msgctxt "slug"
+
 #~ msgid "companies"
 #~ msgstr "bedrijven"
 
@@ -390,16 +388,16 @@ msgstr "sleutelhanger-tag"
 
 #~ msgid "Person"
 #~ msgstr "Persoon"
-
 #~ msgctxt "slug"
+
 #~ msgid "persons"
 #~ msgstr "personen"
-
 #~ msgctxt "taxonomy general name"
+
 #~ msgid "Genders"
 #~ msgstr "Geslachten"
-
 #~ msgctxt "taxonomy singular name"
+
 #~ msgid "Gender"
 #~ msgstr "Geslacht"
 
@@ -435,8 +433,8 @@ msgstr "sleutelhanger-tag"
 
 #~ msgid "Subscription"
 #~ msgstr "Abonnement"
-
 #~ msgctxt "slug"
+
 #~ msgid "subscriptions"
 #~ msgstr "abonnementen"
 
@@ -624,8 +622,8 @@ msgstr "sleutelhanger-tag"
 
 #~ msgid "Project invoice is paid"
 #~ msgstr "Project factuur is betaald"
-
 #~ msgctxt "project"
+
 #~ msgid "Add New"
 #~ msgstr "Nieuw project"
 
@@ -643,8 +641,8 @@ msgstr "sleutelhanger-tag"
 
 #~ msgid "Password Details"
 #~ msgstr "Wachtwoord details"
-
 #~ msgctxt "orbis_password"
+
 #~ msgid "Add New"
 #~ msgstr "Nieuwe toevoegen"
 
@@ -662,8 +660,8 @@ msgstr "sleutelhanger-tag"
 
 #~ msgid "No passwords found"
 #~ msgstr "Geen wachtwoorden gevonden"
-
 #~ msgctxt "slug"
+
 #~ msgid "passwords"
 #~ msgstr "wachtwoorden"
 
