@@ -1,6 +1,6 @@
 === Orbis Keychains ===
 Contributors: pronamic, remcotolsma
-Donate link: http://orbiswp.com/
+Donate link: http://www.orbiswp.com/
 Tags: orbis, keychain, password, username, url, mangement
 Requires at least: 3.5
 Tested up to: 3.5.1
