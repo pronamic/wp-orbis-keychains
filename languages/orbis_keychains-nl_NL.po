@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Orbis Keychains\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-10 15:11+0100\n"
-"PO-Revision-Date: 2013-07-10 15:12+0100\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/orbis-keychains\n"
+"POT-Creation-Date: 2013-12-10 14:01:34+00:00\n"
+"PO-Revision-Date: 2013-12-10 15:03+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -11,11 +11,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;_x:2c,1\n"
-"X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.7\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.6.2\n"
 
 #: admin/meta-box-domain-name-keychains.php:11 includes/hosting.php:146
 msgid "FTP"
@@ -30,6 +28,7 @@ msgid "WordPress"
 msgstr "WordPress"
 
 #: admin/meta-box-hosting-group-keychains.php:11
+#: templates/hosting-group-keychains.php:17
 msgid "Control Panel"
 msgstr "Bedieningspaneel"
 
@@ -63,6 +62,7 @@ msgstr "E-mailadres"
 
 #: includes/hosting.php:9 includes/hosting.php:18 includes/hosting.php:141
 #: includes/post.php:9 includes/post.php:11
+#: templates/hosting-group-keychains.php:11
 msgid "Keychains"
 msgstr "Sleutelhangers"
 
@@ -125,7 +125,6 @@ msgid "I changed the password of this keychain."
 msgstr "Ik heb het wachtwoord van deze sleutelhanger gewijzigd."
 
 #: includes/post.php:201
-#, php-format
 msgid ""
 "Request password, describe with at least <strong>%d words</strong> why you "
 "need this password."
@@ -134,7 +133,6 @@ msgstr ""
 "waarom je dit wachtwoord nodig hebt."
 
 #: includes/post.php:255
-#, php-format
 msgid ""
 "This comment was an password request, the user can view the password till "
 "<strong>%s</strong>."
@@ -143,7 +141,6 @@ msgstr ""
 "bekijken tot <strong>%s</strong>."
 
 #: includes/post.php:262
-#, php-format
 msgid ""
 "This comment was met <strong>%d words</strong> not long enough to display "
 "the password, use at least <strong>%d words</strong>."
@@ -276,6 +273,30 @@ msgstr "Nieuwe tag naam"
 msgctxt "slug"
 msgid "keychain-tag"
 msgstr "sleutelhanger-tag"
+
+#. Plugin Name of the plugin/theme
+msgid "Orbis Keychains"
+msgstr "Orbis sleutelhangers"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.orbiswp.com/"
+msgstr "http://www.orbiswp.com/"
+
+#. Description of the plugin/theme
+msgid ""
+"Give your whole team access to all the login details within your "
+"organization and keep a log of who used wich login details for what reason."
+msgstr ""
+"Geef je hele team toegang tot alle logingegevens binnen je organsiatie en "
+"hou een log bij van wie welke logingegevens waar voor heeft gebruikt."
+
+#. Author of the plugin/theme
+msgid "Pronamic"
+msgstr "Pronamic"
+
+#. Author URI of the plugin/theme
+msgid "http://www.pronamic.eu/"
+msgstr "http://www.pronamic.nl/"
 
 #~ msgid "Hosting Group"
 #~ msgstr "Hosting groep"
@@ -688,9 +709,6 @@ msgstr "sleutelhanger-tag"
 
 #~ msgid "Height"
 #~ msgstr "Hoogte"
-
-#~ msgid "Dynamic"
-#~ msgstr "Dynamisch"
 
 #~ msgid "Show Google Maps"
 #~ msgstr "Google Maps weergeven"

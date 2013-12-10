@@ -1,0 +1,286 @@
+# Copyright (C) 2013 Orbis Keychains
+# This file is distributed under the same license as the Orbis Keychains package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Orbis Keychains 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/orbis-keychains\n"
+"POT-Creation-Date: 2013-12-10 14:01:34+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin/meta-box-domain-name-keychains.php:11 includes/hosting.php:146
+msgid "FTP"
+msgstr ""
+
+#: admin/meta-box-domain-name-keychains.php:19 includes/hosting.php:151
+msgid "Google Apps"
+msgstr ""
+
+#: admin/meta-box-domain-name-keychains.php:27 includes/hosting.php:156
+msgid "WordPress"
+msgstr ""
+
+#: admin/meta-box-hosting-group-keychains.php:11
+#: templates/hosting-group-keychains.php:17
+msgid "Control Panel"
+msgstr ""
+
+#: admin/meta-box-keychain-details.php:11 includes/post.php:286
+#: includes/post.php:330 includes/post.php:369
+msgid "URL"
+msgstr ""
+
+#: admin/meta-box-keychain-details.php:15
+msgid ""
+"Use an full URL: for HTTP <code>http://</code>, for FTP <code>ftp://</code>, "
+"for SFTP <code>sftp://</code>"
+msgstr ""
+
+#: admin/meta-box-keychain-details.php:20 includes/post.php:290
+#: includes/post.php:333 includes/post.php:370
+msgid "Username"
+msgstr ""
+
+#: admin/meta-box-keychain-details.php:28 includes/post.php:293
+#: includes/post.php:336
+msgid "Password"
+msgstr ""
+
+#: admin/meta-box-keychain-details.php:36 includes/post.php:297
+#: includes/post.php:340 includes/post.php:371
+msgid "E-mail Address"
+msgstr ""
+
+#: includes/hosting.php:9 includes/hosting.php:18 includes/hosting.php:141
+#: includes/post.php:9 includes/post.php:11
+#: templates/hosting-group-keychains.php:11
+msgid "Keychains"
+msgstr ""
+
+#: includes/post.php:12
+msgid "Keychain"
+msgstr ""
+
+#: includes/post.php:13
+msgctxt "orbis_keychain"
+msgid "Add New"
+msgstr ""
+
+#: includes/post.php:14
+msgid "Add New Keychain"
+msgstr ""
+
+#: includes/post.php:15
+msgid "Edit Keychain"
+msgstr ""
+
+#: includes/post.php:16
+msgid "New Keychain"
+msgstr ""
+
+#: includes/post.php:17
+msgid "View Keychain"
+msgstr ""
+
+#: includes/post.php:18
+msgid "Search Keychains"
+msgstr ""
+
+#: includes/post.php:19
+msgid "No keychains found"
+msgstr ""
+
+#: includes/post.php:20
+msgid "No keychains found in Trash"
+msgstr ""
+
+#: includes/post.php:28
+msgctxt "slug"
+msgid "keychains"
+msgstr ""
+
+#: includes/post.php:54
+msgid "Administrator"
+msgstr ""
+
+#: includes/post.php:60
+msgid "Editor"
+msgstr ""
+
+#: includes/post.php:99
+msgid "Keychain Details"
+msgstr ""
+
+#: includes/post.php:166
+msgid "I changed the password of this keychain."
+msgstr ""
+
+#: includes/post.php:201
+msgid ""
+"Request password, describe with at least <strong>%d words</strong> why you "
+"need this password."
+msgstr ""
+
+#: includes/post.php:255
+msgid ""
+"This comment was an password request, the user can view the password till "
+"<strong>%s</strong>."
+msgstr ""
+
+#: includes/post.php:262
+msgid ""
+"This comment was met <strong>%d words</strong> not long enough to display "
+"the password, use at least <strong>%d words</strong>."
+msgstr ""
+
+#: includes/post.php:282
+msgid "URL Full"
+msgstr ""
+
+#: includes/post.php:350
+msgid "Login"
+msgstr ""
+
+#: includes/post.php:368
+msgid "Title"
+msgstr ""
+
+#: includes/post.php:372
+msgid "Author"
+msgstr ""
+
+#: includes/post.php:373 includes/taxonomy.php:22
+msgid "Categories"
+msgstr ""
+
+#: includes/post.php:374 includes/taxonomy.php:48
+msgid "Tags"
+msgstr ""
+
+#: includes/post.php:375
+msgid "Comments"
+msgstr ""
+
+#: includes/post.php:376
+msgid "Date"
+msgstr ""
+
+#: includes/taxonomy.php:12
+msgctxt "orbis_keychain_category"
+msgid "Categories"
+msgstr ""
+
+#: includes/taxonomy.php:13
+msgctxt "orbis_keychain_category"
+msgid "Category"
+msgstr ""
+
+#: includes/taxonomy.php:14
+msgid "Search Categories"
+msgstr ""
+
+#: includes/taxonomy.php:15
+msgid "All Categories"
+msgstr ""
+
+#: includes/taxonomy.php:16
+msgid "Parent Category"
+msgstr ""
+
+#: includes/taxonomy.php:17
+msgid "Parent Category:"
+msgstr ""
+
+#: includes/taxonomy.php:18
+msgid "Edit Category"
+msgstr ""
+
+#: includes/taxonomy.php:19
+msgid "Update Category"
+msgstr ""
+
+#: includes/taxonomy.php:20
+msgid "Add New Category"
+msgstr ""
+
+#: includes/taxonomy.php:21
+msgid "New Category Name"
+msgstr ""
+
+#: includes/taxonomy.php:27
+msgctxt "slug"
+msgid "keychain-categorie"
+msgstr ""
+
+#: includes/taxonomy.php:38
+msgctxt "orbis_keychain_category"
+msgid "Tags"
+msgstr ""
+
+#: includes/taxonomy.php:39
+msgctxt "orbis_keychain_category"
+msgid "Tag"
+msgstr ""
+
+#: includes/taxonomy.php:40
+msgid "Search Tags"
+msgstr ""
+
+#: includes/taxonomy.php:41
+msgid "All Tags"
+msgstr ""
+
+#: includes/taxonomy.php:42
+msgid "Parent Tag"
+msgstr ""
+
+#: includes/taxonomy.php:43
+msgid "Parent Tag:"
+msgstr ""
+
+#: includes/taxonomy.php:44
+msgid "Edit Tag"
+msgstr ""
+
+#: includes/taxonomy.php:45
+msgid "Update Tag"
+msgstr ""
+
+#: includes/taxonomy.php:46
+msgid "Add New Tag"
+msgstr ""
+
+#: includes/taxonomy.php:47
+msgid "New Tag Name"
+msgstr ""
+
+#: includes/taxonomy.php:53
+msgctxt "slug"
+msgid "keychain-tag"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Orbis Keychains"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.orbiswp.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Give your whole team access to all the login details within your "
+"organization and keep a log of who used wich login details for what reason."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Pronamic"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.pronamic.eu/"
+msgstr ""
