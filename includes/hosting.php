@@ -12,12 +12,21 @@ function orbis_domain_names_add_meta_boxes() {
 		'normal',
 		'high'
 	);
+
+	add_meta_box(
+		'orbis_hosting_group_keychains',
+		__( 'Keychains', 'orbis_keychains' ),
+		'orbis_hosting_group_keychains_meta_box',
+		'orbis_hosting_group',
+		'normal',
+		'high'
+	);
 }
 
 add_action( 'add_meta_boxes', 'orbis_domain_names_add_meta_boxes' );
 
 /**
- * Keychain details meta box
+ * Domain name keychains meta box
  *
  * @param array $post
 */
@@ -28,7 +37,18 @@ function orbis_domain_name_keychains_meta_box( $post ) {
 }
 
 /**
- * Save keychain details
+ * Hosting group keychains meta box
+ *
+ * @param array $post
+*/
+function orbis_hosting_group_keychains_meta_box( $post ) {
+	global $orbis_keychains_plugin;
+
+	$orbis_keychains_plugin->plugin_include( 'admin/meta-box-hosting-group-keychains.php' );
+}
+
+/**
+ * Save domain name keychains
  */
 function orbis_save_domain_name_keychains( $post_id, $post ) {
 	// Doing autosave
@@ -65,7 +85,45 @@ function orbis_save_domain_name_keychains( $post_id, $post ) {
 	}
 }
 
-add_action('save_post', 'orbis_save_domain_name_keychains', 10, 2);
+add_action( 'save_post', 'orbis_save_domain_name_keychains', 10, 2 );
+
+/**
+ * Save hosting group keychains
+ */
+function orbis_save_hosting_group_keychains( $post_id, $post ) {
+	// Doing autosave
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	// Verify nonce
+	$nonce = filter_input( INPUT_POST, 'orbis_hosting_group_keychains_meta_box_nonce', FILTER_SANITIZE_STRING );
+	if ( ! wp_verify_nonce( $nonce, 'orbis_save_hosting_group_keychains' ) ) {
+		return;
+	}
+
+	// Check permissions
+	if ( ! ( $post->post_type == 'orbis_hosting_group' && current_user_can( 'edit_post', $post_id ) ) ) {
+		return;
+	}
+
+	// OK
+	$definition = array(
+		'_orbis_hosting_group_control_panel_keychain_id' => FILTER_SANITIZE_STRING
+	);
+
+	$data = filter_input_array( INPUT_POST, $definition );
+
+	foreach ( $data as $key => $value ) {
+		if ( empty( $value ) ) {
+			delete_post_meta( $post_id, $key );
+		} else {
+			update_post_meta( $post_id, $key, $value );
+		}
+	}
+}
+
+add_action( 'save_post', 'orbis_save_hosting_group_keychains', 10, 2 );
 
 /**
  * Keychain content
