@@ -195,12 +195,12 @@ function orbis_keychain_comment_form($post_id) {
 	if ( get_post_type( $post_id ) == 'orbis_keychain' ) {
 		$str  = '';
 
-		$str .= '<p>';
-		$str .=	'	<label class="checkbox">';
+		$str .= '<div class="checkbox">';
+		$str .=	'	<label>';
 		$str .= '		<input type="checkbox" name="orbis_keychain_password_request" value="true" /> ';
 		$str .= '		' . sprintf( __( 'Request password, describe with at least <strong>%d words</strong> why you need this password.', 'orbis_keychains' ), orbis_keychain_get_password_required_word_count() );
 		$str .= '	</label>';
-		$str .= '</p>';
+		$str .= '</div>';
 
 		echo $str;
 	}
@@ -281,21 +281,21 @@ function orbis_keychain_get_comment_text($text, $comment) {
 
 			$str .= '	<dt>' . sprintf( '<label for="url-full-field-%d">%s</label>', $comment->comment_ID, __( 'URL Full', 'orbis_keychains' ) ) . '</dt>';
 			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', $url_full, $url_full ) . '</dd>';
-			$str .= '	<dd>' . sprintf( '<input id="url-full-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $url_full ) ) . '</dd>';
+			$str .= '	<dd>' . sprintf( '<input id="url-full-field-%d" class="form-control" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $url_full ) ) . '</dd>';
 
 			$str .= '	<dt>' . sprintf( '<label for="url-field-%d">%s</label>', $comment->comment_ID, __( 'URL', 'orbis_keychains' ) ) . '</dt>';
 			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', $url, $url) . '</dd>';
-			$str .= '	<dd>' . sprintf( '<input id="url-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $url ) ) . '</dd>';
+			$str .= '	<dd>' . sprintf( '<input id="url-field-%d" class="form-control" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $url ) ) . '</dd>';
 
 			$str .= '	<dt>' . sprintf( '<label for="username-field-%d">%s</label>', $comment->comment_ID, __( 'Username', 'orbis_keychains' ) ) . '</dt>';
-			$str .= '	<dd>' . sprintf( '<input id="username-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $username ) ) . '</dd>';
+			$str .= '	<dd>' . sprintf( '<input id="username-field-%d" class="form-control" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $username ) ) . '</dd>';
 
 			$str .= '	<dt>' . sprintf( '<label for="password-field-%d">%s</label>', $comment->comment_ID, __( 'Password', 'orbis_keychains' ) ) . '</dt>';
-			$str .= '	<dd>' . sprintf( '<input id="password-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $password ) ) . '</dd>';
+			$str .= '	<dd>' . sprintf( '<input id="password-field-%d" class="form-control" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $password ) ) . '</dd>';
 
 			if ( ! empty( $email ) ) {
 				$str .= '	<dt>' . sprintf( '<label for="email-field-%d">%s</label>', $comment->comment_ID, __( 'E-mail Address', 'orbis_keychains' ) ) . '</dt>';
-				$str .= '	<dd>' . sprintf( '<input id="email-field-%d" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $email ) ) . '</dd>';
+				$str .= '	<dd>' . sprintf( '<input id="email-field-%d" class="form-control" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $email ) ) . '</dd>';
 			}
 
 			$str .= '</dl>';
@@ -331,7 +331,7 @@ function orbis_keychain_the_content( $content ) {
 		$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', $url, $url ) . '</dd>';
 
 		$str .= '	<dt>' . __( 'Username', 'orbis_keychains' ) . '</dt>';
-		$str .= '	<dd>' . sprintf( '<input type="text" value="%s" readonly="readonly" />', esc_attr( $username ) ) . '</dd>';
+		$str .= '	<dd>' . sprintf( '<input type="text" class="form-control" value="%s" readonly="readonly" />', esc_attr( $username ) ) . '</dd>';
 
 		$str .= '	<dt>' . __( 'Password', 'orbis_keychains' ) . '</dt>';
 		$str .= '	<dd>' . '********' . '</dd>';
