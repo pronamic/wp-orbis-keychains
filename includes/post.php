@@ -177,7 +177,7 @@ function orbis_keychain_password_update( $post_id, $password_old, $password_new 
 	$user = wp_get_current_user();
 
 	$comment_content = sprintf(
-		__( "The password '%s' was changed to '%s' by %s.", 'orbis_deals' ),
+		__( "The password '%s' was changed to '%s' by %s.", 'orbis_keychains' ),
 		str_repeat( '*', strlen( $password_old ) ),
 		str_repeat( '*', strlen( $password_new ) ),
 		$user->display_name
