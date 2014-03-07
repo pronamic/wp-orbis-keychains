@@ -138,43 +138,62 @@ function orbis_save_keychain_details( $post_id, $post ) {
 	}
 
 	// OK
-	$currentPassword = get_post_meta( $post_id, '_orbis_keychain_password', true );
-	$newPassword     = filter_input( INPUT_POST, '_orbis_keychain_password', FILTER_SANITIZE_STRING );
-
 	$definition = array(
 		'_orbis_keychain_url'      => FILTER_VALIDATE_URL,
 		'_orbis_keychain_email'    => FILTER_VALIDATE_EMAIL,
 		'_orbis_keychain_username' => FILTER_SANITIZE_STRING,
-		'_orbis_keychain_password' => FILTER_SANITIZE_STRING
+		'_orbis_keychain_password' => FILTER_UNSAFE_RAW,
 	);
 
-	$data = filter_input_array(INPUT_POST, $definition);
+	$data = wp_slash( filter_input_array( INPUT_POST, $definition ) );
+	
+	// Pasword
+	$password_old = get_post_meta( $post_id, '_orbis_keychain_password', true );
+	$password_new = $data['_orbis_keychain_password'];
 
-	foreach ( $data as $key => $value ) {
+	foreach ( $data as $key => $value ) 	{
 		if ( empty( $value ) ) {
 			delete_post_meta( $post_id, $key );
 		} else {
 			update_post_meta( $post_id, $key, $value );
 		}
 	}
-
-	if ( ! empty( $currentPassword ) && $currentPassword != $newPassword ) {
-		$user = wp_get_current_user();
-
-		$data = array(
-			'comment_post_ID'      => $post_id,
-			'comment_content'      => __( 'I changed the password of this keychain.', 'orbis_keychains' ),
-			'comment_author'       => $user->display_name,
-			'comment_author_email' => $user->user_email,
-			'comment_author_url'   => $user->user_url,
-			'user_id'              => $user->ID
-		);
-
-		$comment_ID = wp_new_comment( $data );
+	
+	// Action
+	if ( $post->post_status == 'publish' && ! empty( $password_old ) && $password_old != $password_new ) {
+		// @see https://github.com/woothemes/woocommerce/blob/v2.1.4/includes/class-wc-order.php#L1274
+		do_action( 'orbis_keychain_password_update', $post_id, $password_old, $password_new );
 	}
 }
 
 add_action( 'save_post', 'orbis_save_keychain_details', 10, 2 );
+
+/**
+ * Keychain password update
+ *
+ * @param int $post_id
+ */
+function orbis_keychain_password_update( $post_id, $password_old, $password_new ) {
+	$user = wp_get_current_user();
+
+	$comment_content = sprintf(
+		__( "The password '%s' was changed to '%s' by %s.", 'orbis_deals' ),
+		str_repeat( '*', strlen( $password_old ) ),
+		str_repeat( '*', strlen( $password_new ) ),
+		$user->display_name
+	);
+
+	$data = array(
+		'comment_post_ID'      => $post_id,
+		'comment_content'      => $comment_content,
+		'comment_author'       => 'Orbis',
+		'comment_type'         => 'orbis_comment',
+	);
+
+	$comment_id = wp_insert_comment( $data );
+}
+
+add_action( 'orbis_keychain_password_update', 'orbis_keychain_password_update', 10, 3 );
 
 /**
  * Keychian password required word count
