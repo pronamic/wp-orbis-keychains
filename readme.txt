@@ -28,6 +28,9 @@ Give your whole team access to all the login details within your organization an
 
 == Changelog ==
 
+= 1.0.3 =
+*	Tweak - Switched from custom menu icons to the new WordPress [Dashicons](http://melchoyce.github.io/dashicons/).
+
 = 1.0.2 =
 *	Added support for passwords with special characters.
 *	Improved changed password Orbis system comment.
