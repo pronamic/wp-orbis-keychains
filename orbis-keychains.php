@@ -4,7 +4,7 @@ Plugin Name: Orbis Keychains
 Plugin URI: http://www.orbiswp.com/
 Description: Give your whole team access to all the login details within your organization and keep a log of who used wich login details for what reason.
 
-Version: 1.0.2
+Version: 1.0.3
 Requires at least: 3.5
 
 Author: Pronamic
