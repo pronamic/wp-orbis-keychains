@@ -21,7 +21,7 @@ function orbis_keychains_create_initial_post_types() {
 			) ,
 			'public'          => true,
 			'menu_position'   => 30,
-			'menu_icon'       => $orbis_keychains_plugin->plugin_url( 'admin/images/keychain.png' ),
+			'menu_icon'       => 'dashicons-admin-network',
 			'capability_type' => array( 'keychain', 'keychains' ),
 			'supports'        => array( 'title', 'editor', 'author', 'comments' ),
 			'has_archive'     => true,
@@ -177,7 +177,7 @@ function orbis_keychain_password_update( $post_id, $password_old, $password_new 
 	$user = wp_get_current_user();
 
 	$comment_content = sprintf(
-		__( "The password '%s' was changed to '%s' by %s.", 'orbis_deals' ),
+		__( "The password '%s' was changed to '%s' by %s.", 'orbis_keychains' ),
 		str_repeat( '*', strlen( $password_old ) ),
 		str_repeat( '*', strlen( $password_new ) ),
 		$user->display_name
