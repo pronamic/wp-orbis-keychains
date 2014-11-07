@@ -22,7 +22,7 @@ function orbis_keychains_bootstrap() {
 	include 'classes/orbis-keychains-plugin.php';
 
 	global $orbis_keychains_plugin;
-	
+
 	$orbis_keychains_plugin = new Orbis_Keychains_Plugin( __FILE__ );
 }
 
