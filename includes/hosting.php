@@ -63,7 +63,7 @@ function orbis_save_domain_name_keychains( $post_id, $post ) {
 	}
 
 	// Check permissions
-	if ( ! ( $post->post_type == 'orbis_domain_name' && current_user_can( 'edit_post', $post_id ) ) ) {
+	if ( ! ( 'orbis_domain_name' == $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
 
@@ -71,7 +71,7 @@ function orbis_save_domain_name_keychains( $post_id, $post ) {
 	$definition = array(
 		'_orbis_domain_name_ftp_keychain_id'         => FILTER_SANITIZE_STRING,
 		'_orbis_domain_name_google_apps_keychain_id' => FILTER_SANITIZE_STRING,
-		'_orbis_domain_name_wordpress_keychain_id'   => FILTER_SANITIZE_STRING
+		'_orbis_domain_name_wordpress_keychain_id'   => FILTER_SANITIZE_STRING,
 	);
 
 	$data = filter_input_array( INPUT_POST, $definition );
@@ -103,13 +103,13 @@ function orbis_save_hosting_group_keychains( $post_id, $post ) {
 	}
 
 	// Check permissions
-	if ( ! ( $post->post_type == 'orbis_hosting_group' && current_user_can( 'edit_post', $post_id ) ) ) {
+	if ( ! ( 'orbis_hosting_group' == $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
 
 	// OK
 	$definition = array(
-		'_orbis_hosting_group_control_panel_keychain_id' => FILTER_SANITIZE_STRING
+		'_orbis_hosting_group_control_panel_keychain_id' => FILTER_SANITIZE_STRING,
 	);
 
 	$data = filter_input_array( INPUT_POST, $definition );
@@ -129,7 +129,7 @@ add_action( 'save_post', 'orbis_save_hosting_group_keychains', 10, 2 );
  * Keychain content
 */
 function orbis_domain_name_the_content( $content ) {
-	if ( get_post_type() == 'orbis_domain_name' ) {
+	if ( 'orbis_domain_name' == get_post_type() ) {
 		$id = get_the_ID();
 
 		$ftpKeychainId        = get_post_meta( $id, '_orbis_domain_name_ftp_keychain_id', true );

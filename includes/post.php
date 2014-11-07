@@ -46,22 +46,20 @@ function orbis_keychain_setup_roles() {
 		'delete_published_keychains' => true,
 		'delete_other_keychains'     => true,
 		'edit_private_keychains'     => true,
-		'edit_published_keychains'   => true
+		'edit_published_keychains'   => true,
 	);
 
 	$roles = array(
 		'administrator' => array(
 			'display_name' => __( 'Administrator', 'orbis_keychains' ),
-			'capabilities' => array_merge( $default_capabilities, array(
-
-			) )
-		) ,
+			'capabilities' => array_merge( $default_capabilities, array() ),
+		),
 		'editor' => array(
 			'display_name' => __( 'Editor', 'orbis_keychains' ),
 			'capabilities' => array_merge( $default_capabilities, array(
-				'edit_others_keychains' => false
-			) )
-		)
+				'edit_others_keychains' => false,
+			) ),
+		),
 	);
 
 	orbis_update_roles( $roles );
@@ -69,10 +67,6 @@ function orbis_keychain_setup_roles() {
 
 function orbis_update_roles( $roles ) {
 	global $wp_roles;
-
-	if ( ! isset( $wp_roles ) ) {
-		$wp_roles = new WP_Roles();
-	}
 
 	foreach ( $roles as $role => $data ) {
 		if ( isset( $data['display_name'], $data['capabilities'] ) ) {
@@ -114,7 +108,7 @@ add_action( 'add_meta_boxes', 'orbis_keychain_add_meta_boxes' );
 function orbis_keychain_details_meta_box( $post ) {
 	global $orbis_keychains_plugin;
 
-	include dirname( $orbis_keychains_plugin->file) . '/admin/meta-box-keychain-details.php';
+	include dirname( $orbis_keychains_plugin->file ) . '/admin/meta-box-keychain-details.php';
 }
 
 /**
@@ -133,7 +127,7 @@ function orbis_save_keychain_details( $post_id, $post ) {
 	}
 
 	// Check permissions
-	if ( ! ( $post->post_type == 'orbis_keychain' && current_user_can( 'edit_post', $post_id ) ) ) {
+	if ( ! ( 'orbis_keychain' == $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
 
@@ -160,7 +154,7 @@ function orbis_save_keychain_details( $post_id, $post ) {
 	}
 
 	// Action
-	if ( $post->post_status == 'publish' && ! empty( $password_old ) && $password_old != $password_new ) {
+	if ( 'publish' == $post->post_status && ! empty( $password_old ) && $password_old != $password_new ) {
 		// @see https://github.com/woothemes/woocommerce/blob/v2.1.4/includes/class-wc-order.php#L1274
 		do_action( 'orbis_keychain_password_update', $post_id, $password_old, $password_new );
 	}
@@ -207,22 +201,28 @@ function orbis_keychain_get_password_required_word_count() {
 /**
  * Comment form defaults
  */
-function orbis_keychain_comment_form($post_id) {
+function orbis_keychain_comment_form( $post_id ) {
 	// Some themes call this function, don't show the checkbox again
 	remove_action( 'comment_form', __FUNCTION__ );
 
-	if ( get_post_type( $post_id ) == 'orbis_keychain' ) {
-		$str  = '';
+	if ( 'orbis_keychain' == get_post_type( $post_id ) ) : ?>
 
-		$str .= '<div class="checkbox">';
-		$str .=	'	<label>';
-		$str .= '		<input type="checkbox" name="orbis_keychain_password_request" value="true" /> ';
-		$str .= '		' . sprintf( __( 'Request password, describe with at least <strong>%d words</strong> why you need this password.', 'orbis_keychains' ), orbis_keychain_get_password_required_word_count() );
-		$str .= '	</label>';
-		$str .= '</div>';
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" name="orbis_keychain_password_request" value="true" />
 
-		echo $str;
-	}
+				<?php
+
+				printf(
+					__( 'Request password, describe with at least <strong>%d words</strong> why you need this password.', 'orbis_keychains' ),
+					orbis_keychain_get_password_required_word_count()
+				);
+
+				?>
+			</label>
+		</div>
+
+	<?php endif;
 }
 
 add_filter( 'comment_form', 'orbis_keychain_comment_form' );
@@ -246,14 +246,14 @@ add_action( 'comment_post', 'orbis_keychain_comment_post', 50, 2 );
 /**
  * Keychain comment text
 */
-function orbis_keychain_get_comment_text($text, $comment) {
-	$isPasswordRequest = get_comment_meta($comment->comment_ID, 'orbis_keychain_password_request', true);
+function orbis_keychain_get_comment_text( $text, $comment ) {
+	$isPasswordRequest = get_comment_meta( $comment->comment_ID, 'orbis_keychain_password_request', true );
 
-	if($isPasswordRequest) {
+	if ( $isPasswordRequest ) {
 		$currentDate = new DateTime();
 
-		$visibleTillDate = new DateTime($comment->comment_date);
-		$visibleTillDate->modify('+2 days');
+		$visibleTillDate = new DateTime( $comment->comment_date );
+		$visibleTillDate->modify( '+2 days' );
 
 		$str  = '';
 
@@ -262,11 +262,11 @@ function orbis_keychain_get_comment_text($text, $comment) {
 		$currentUser = wp_get_current_user();
 		$isCurrentUser = $currentUser->ID == $comment->user_id;
 
-		$wordCount = str_word_count($comment->comment_content);
+		$wordCount = str_word_count( $comment->comment_content );
 		$wordCountRequired = orbis_keychain_get_password_required_word_count();
 		$isCommentEnough = $wordCount >= $wordCountRequired;
 
-		$isWithinDate = $visibleTillDate->format('U') > $currentDate->format('U');
+		$isWithinDate = $visibleTillDate->format( 'U' ) > $currentDate->format( 'U' );
 
 		if ( $isCommentEnough ) {
 			$str .= '<p>';
@@ -286,14 +286,14 @@ function orbis_keychain_get_comment_text($text, $comment) {
 		}
 
 		if ( $isCurrentUser && $isCommentEnough && $isWithinDate ) {
-			$url      = get_post_meta($comment->comment_post_ID, '_orbis_keychain_url', true);
-			$username = get_post_meta($comment->comment_post_ID, '_orbis_keychain_username', true);
-			$password = get_post_meta($comment->comment_post_ID, '_orbis_keychain_password', true);
-			$email    = get_post_meta($comment->comment_post_ID, '_orbis_keychain_email', true);
+			$url      = get_post_meta( $comment->comment_post_ID, '_orbis_keychain_url', true );
+			$username = get_post_meta( $comment->comment_post_ID, '_orbis_keychain_username', true );
+			$password = get_post_meta( $comment->comment_post_ID, '_orbis_keychain_password', true );
+			$email    = get_post_meta( $comment->comment_post_ID, '_orbis_keychain_email', true );
 
 			$url_full = http_build_url( $url, array(
 				'user' => $username,
-				'pass' => $password
+				'pass' => $password,
 			) );
 
 			$str .= '<dl>';
@@ -303,7 +303,7 @@ function orbis_keychain_get_comment_text($text, $comment) {
 			$str .= '	<dd>' . sprintf( '<input id="url-full-field-%d" class="form-control" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $url_full ) ) . '</dd>';
 
 			$str .= '	<dt>' . sprintf( '<label for="url-field-%d">%s</label>', $comment->comment_ID, __( 'URL', 'orbis_keychains' ) ) . '</dt>';
-			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', $url, $url) . '</dd>';
+			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', $url, $url ) . '</dd>';
 			$str .= '	<dd>' . sprintf( '<input id="url-field-%d" class="form-control" type="text" value="%s" readonly="readonly" />', $comment->comment_ID, esc_attr( $url ) ) . '</dd>';
 
 			$str .= '	<dt>' . sprintf( '<label for="username-field-%d">%s</label>', $comment->comment_ID, __( 'Username', 'orbis_keychains' ) ) . '</dt>';
@@ -334,7 +334,7 @@ add_filter( 'comment_text', 'orbis_keychain_get_comment_text', 20, 2 );
  * Keychain content
 */
 function orbis_keychain_the_content( $content ) {
-	if ( get_post_type() == 'orbis_keychain' ) {
+	if ( 'orbis_keychain' == get_post_type() ) {
 		$id = get_the_ID();
 
 		$url      = get_post_meta( $id, '_orbis_keychain_url', true );
@@ -411,16 +411,16 @@ function orbis_keychain_column( $column ) {
 			$url = get_post_meta( $id, '_orbis_keychain_url', true );
 
 			if ( ! empty( $url ) ) {
-				printf( '<a href="%s" target="_blank">%s</a>', $url, $url );
+				printf( '<a href="%s" target="_blank">%s</a>', esc_attr( $url ), esc_html( $url ) );
 			}
 
 			break;
 		case 'orbis_keychain_username' :
-			echo get_post_meta( $id, '_orbis_keychain_username', true );
+			echo esc_html( get_post_meta( $id, '_orbis_keychain_username', true ) );
 
 			break;
 		case 'orbis_keychain_email' :
-			echo get_post_meta( $id, '_orbis_keychain_email', true );
+			echo esc_html( get_post_meta( $id, '_orbis_keychain_email', true ) );
 
 			break;
 		case 'orbis_keychain_categories' :
