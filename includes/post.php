@@ -178,10 +178,10 @@ function orbis_keychain_password_update( $post_id, $password_old, $password_new 
 	);
 
 	$data = array(
-		'comment_post_ID'      => $post_id,
-		'comment_content'      => $comment_content,
-		'comment_author'       => 'Orbis',
-		'comment_type'         => 'orbis_comment',
+		'comment_post_ID' => $post_id,
+		'comment_content' => $comment_content,
+		'comment_author'  => 'Orbis',
+		'comment_type'    => 'orbis_comment',
 	);
 
 	$comment_id = wp_insert_comment( $data );
