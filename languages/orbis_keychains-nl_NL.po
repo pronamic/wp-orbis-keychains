@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis Keychains\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis-keychains\n"
-"POT-Creation-Date: 2014-03-07 15:32:06+00:00\n"
-"PO-Revision-Date: 2014-03-07 16:32+0100\n"
+"POT-Creation-Date: 2014-11-07 09:12:38+00:00\n"
+"PO-Revision-Date: 2014-11-07 10:13+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -13,21 +13,21 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x:2c,1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.10\n"
 
-#: admin/meta-box-domain-name-keychains.php:11 includes/hosting.php:146
+#: admin/meta-box-domain-name-keychains.php:15 includes/hosting.php:146
 msgid "FTP"
 msgstr "FTP"
 
-#: admin/meta-box-domain-name-keychains.php:19 includes/hosting.php:151
+#: admin/meta-box-domain-name-keychains.php:23 includes/hosting.php:151
 msgid "Google Apps"
 msgstr "Google Apps"
 
-#: admin/meta-box-domain-name-keychains.php:27 includes/hosting.php:156
+#: admin/meta-box-domain-name-keychains.php:31 includes/hosting.php:156
 msgid "WordPress"
 msgstr "WordPress"
 
-#: admin/meta-box-hosting-group-keychains.php:11
+#: admin/meta-box-hosting-group-keychains.php:13
 #: templates/hosting-group-keychains.php:17
 msgid "Control Panel"
 msgstr "Bedieningspaneel"
@@ -60,11 +60,15 @@ msgstr "Wachtwoord"
 msgid "E-mail Address"
 msgstr "E-mailadres"
 
-#: includes/hosting.php:9 includes/hosting.php:18 includes/hosting.php:141
-#: includes/post.php:9 includes/post.php:11
-#: templates/hosting-group-keychains.php:11
+#: classes/orbis-keychains-admin.php:41 includes/hosting.php:9
+#: includes/hosting.php:18 includes/hosting.php:141 includes/post.php:9
+#: includes/post.php:11 templates/hosting-group-keychains.php:11
 msgid "Keychains"
 msgstr "Sleutelhangers"
+
+#: classes/orbis-keychains-admin.php:48
+msgid "Word Count"
+msgstr "Aantal woorden"
 
 #: includes/post.php:12
 msgid "Keychain"
@@ -102,19 +106,19 @@ msgstr "Geen sleutelhangers gevonden in prullenbak"
 msgid "Administrator"
 msgstr "Beheerder"
 
-#: includes/post.php:60
+#: includes/post.php:58
 msgid "Editor"
 msgstr "Auteur"
 
-#: includes/post.php:99
+#: includes/post.php:93
 msgid "Keychain Details"
 msgstr "Sleutelhanger details"
 
-#: includes/post.php:180
+#: includes/post.php:174
 msgid "The password '%s' was changed to '%s' by %s."
 msgstr "Het wachtwoord '%s' werd gewijzigd naar '%s' door %s."
 
-#: includes/post.php:220
+#: includes/post.php:217
 msgid ""
 "Request password, describe with at least <strong>%d words</strong> why you "
 "need this password."

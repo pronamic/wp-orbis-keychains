@@ -195,7 +195,7 @@ add_action( 'orbis_keychain_password_update', 'orbis_keychain_password_update', 
  * @return int
 */
 function orbis_keychain_get_password_required_word_count() {
-	return 10;
+	return intval( get_option( 'orbis_keychains_word_count', 10 ) );
 }
 
 /**

@@ -9,6 +9,11 @@ class Orbis_Keychains_Plugin extends Orbis_Plugin {
 		$this->plugin_include( 'includes/post.php' );
 		$this->plugin_include( 'includes/taxonomy.php' );
 		$this->plugin_include( 'includes/template.php' );
+
+		// Admin
+		if ( is_admin() ) {
+			$this->admin = new Orbis_Keychains_Admin( $this );
+		}
 	}
 
 	public function loaded() {
