@@ -21,8 +21,8 @@ function orbis_keychains_create_initial_taxonomies() {
 				'new_item_name'     => __( 'New Category Name', 'orbis_keychains' ),
 				'menu_name'         => __( 'Categories', 'orbis_keychains' )
 			),
-			'show_ui'      => true, 
-			'query_var'    => true, 
+			'show_ui'      => true,
+			'query_var'    => true,
 			'rewrite'      => array(
 				'slug' => _x( 'keychain-categorie', 'slug', 'orbis_keychains' )
 			)
