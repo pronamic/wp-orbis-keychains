@@ -8,7 +8,7 @@ function orbis_keychains_create_initial_post_types() {
 		array(
 			'label'           => __( 'Keychains', 'orbis_keychains' ),
 			'labels'          => array(
-				'name'               => __( 'Keychains', 'orbis_keychains' ), 
+				'name'               => __( 'Keychains', 'orbis_keychains' ),
 				'singular_name'      => __( 'Keychain', 'orbis_keychains' ),
 				'add_new'            => _x( 'Add New', 'orbis_keychain', 'orbis_keychains' ),
 				'add_new_item'       => __( 'Add New Keychain', 'orbis_keychains' ),
@@ -17,7 +17,7 @@ function orbis_keychains_create_initial_post_types() {
 				'view_item'          => __( 'View Keychain', 'orbis_keychains' ),
 				'search_items'       => __( 'Search Keychains', 'orbis_keychains' ),
 				'not_found'          => __( 'No keychains found', 'orbis_keychains' ),
-				'not_found_in_trash' => __( 'No keychains found in Trash', 'orbis_keychains' ) 
+				'not_found_in_trash' => __( 'No keychains found in Trash', 'orbis_keychains' )
 			) ,
 			'public'          => true,
 			'menu_position'   => 30,
@@ -25,7 +25,7 @@ function orbis_keychains_create_initial_post_types() {
 			'capability_type' => array( 'keychain', 'keychains' ),
 			'supports'        => array( 'title', 'editor', 'author', 'comments' ),
 			'has_archive'     => true,
-			'rewrite'         => array( 'slug' => _x( 'keychains', 'slug', 'orbis_keychains' ) ) 
+			'rewrite'         => array( 'slug' => _x( 'keychains', 'slug', 'orbis_keychains' ) )
 		)
 	);
 }
@@ -146,7 +146,7 @@ function orbis_save_keychain_details( $post_id, $post ) {
 	);
 
 	$data = wp_slash( filter_input_array( INPUT_POST, $definition ) );
-	
+
 	// Pasword
 	$password_old = get_post_meta( $post_id, '_orbis_keychain_password', true );
 	$password_new = $data['_orbis_keychain_password'];
@@ -158,7 +158,7 @@ function orbis_save_keychain_details( $post_id, $post ) {
 			update_post_meta( $post_id, $key, $value );
 		}
 	}
-	
+
 	// Action
 	if ( $post->post_status == 'publish' && ! empty( $password_old ) && $password_old != $password_new ) {
 		// @see https://github.com/woothemes/woocommerce/blob/v2.1.4/includes/class-wc-order.php#L1274
@@ -361,7 +361,7 @@ function orbis_keychain_the_content( $content ) {
 		}
 
 		$str .= '</dl>';
-		
+
 		if ( has_term( 'WordPress', 'orbis_keychain_category' ) ) {
 			$str .= sprintf( '<form method="post" action="%s" target="_blank">', esc_attr( $url ) );
 			$str .= sprintf( '<input type="hidden" value="%s" name="log" />', esc_attr( $username ) );
