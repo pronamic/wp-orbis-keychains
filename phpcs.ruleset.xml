@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<ruleset name="Orbis Keychains rules">
+	<rule ref="WordPress">
+		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
+	</rule>
+</ruleset>
