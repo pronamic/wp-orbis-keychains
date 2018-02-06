@@ -8,13 +8,13 @@ if ( ! empty( $control_panel_keychain_id ) ) : ?>
 
 	<div class="panel">
 		<header>
-			<h3><?php _e( 'Keychains', 'orbis_keychains' ); ?></h3>
+			<h3><?php esc_html_e( 'Keychains', 'orbis_keychains' ); ?></h3>
 		</header>
 
 		<div class="content">
 			<dl>
 				<dt>
-					<?php _e( 'Control Panel', 'orbis_keychains' ); ?>
+					<?php esc_html_e( 'Control Panel', 'orbis_keychains' ); ?>
 				</dt>
 				<dd>
 					<a href="<?php echo esc_attr( get_permalink( $control_panel_keychain_id ) ); ?>">
@@ -25,4 +25,4 @@ if ( ! empty( $control_panel_keychain_id ) ) : ?>
 		</div>
 	</div>
 
- <?php endif; ?>
+<?php endif; ?>

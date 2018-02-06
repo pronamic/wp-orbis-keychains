@@ -17,15 +17,15 @@ function orbis_keychains_create_initial_post_types() {
 				'view_item'          => __( 'View Keychain', 'orbis_keychains' ),
 				'search_items'       => __( 'Search Keychains', 'orbis_keychains' ),
 				'not_found'          => __( 'No keychains found', 'orbis_keychains' ),
-				'not_found_in_trash' => __( 'No keychains found in Trash', 'orbis_keychains' )
-			) ,
+				'not_found_in_trash' => __( 'No keychains found in Trash', 'orbis_keychains' ),
+			),
 			'public'          => true,
 			'menu_position'   => 30,
 			'menu_icon'       => 'dashicons-admin-network',
 			'capability_type' => array( 'keychain', 'keychains' ),
 			'supports'        => array( 'title', 'editor', 'author', 'comments' ),
 			'has_archive'     => true,
-			'rewrite'         => array( 'slug' => _x( 'keychains', 'slug', 'orbis_keychains' ) )
+			'rewrite'         => array( 'slug' => _x( 'keychains', 'slug', 'orbis_keychains' ) ),
 		)
 	);
 }
@@ -74,7 +74,7 @@ function orbis_update_roles( $roles ) {
 			$capabilities = $data['capabilities'];
 
 			if ( $wp_roles->is_role( $role ) ) {
-				foreach  ( $capabilities as $cap => $grant ) {
+				foreach ( $capabilities as $cap => $grant ) {
 					$wp_roles->add_cap( $role, $cap, $grant );
 				}
 			} else {
@@ -127,7 +127,7 @@ function orbis_save_keychain_details( $post_id, $post ) {
 	}
 
 	// Check permissions
-	if ( ! ( 'orbis_keychain' == $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
+	if ( ! ( 'orbis_keychain' === $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
 
@@ -145,7 +145,7 @@ function orbis_save_keychain_details( $post_id, $post ) {
 	$password_old = get_post_meta( $post_id, '_orbis_keychain_password', true );
 	$password_new = $data['_orbis_keychain_password'];
 
-	foreach ( $data as $key => $value ) 	{
+	foreach ( $data as $key => $value ) {
 		if ( empty( $value ) ) {
 			delete_post_meta( $post_id, $key );
 		} else {
@@ -154,7 +154,7 @@ function orbis_save_keychain_details( $post_id, $post ) {
 	}
 
 	// Action
-	if ( 'publish' == $post->post_status && ! empty( $password_old ) && $password_old != $password_new ) {
+	if ( 'publish' === $post->post_status && ! empty( $password_old ) && $password_old !== $password_new ) {
 		// @see https://github.com/woothemes/woocommerce/blob/v2.1.4/includes/class-wc-order.php#L1274
 		do_action( 'orbis_keychain_password_update', $post_id, $password_old, $password_new );
 	}
@@ -205,7 +205,7 @@ function orbis_keychain_comment_form( $post_id ) {
 	// Some themes call this function, don't show the checkbox again
 	remove_action( 'comment_form', __FUNCTION__ );
 
-	if ( 'orbis_keychain' == get_post_type( $post_id ) ) : ?>
+	if ( 'orbis_keychain' === get_post_type( $post_id ) ) : ?>
 
 		<div class="checkbox">
 			<label>
@@ -247,45 +247,45 @@ add_action( 'comment_post', 'orbis_keychain_comment_post', 50, 2 );
  * Keychain comment text
 */
 function orbis_keychain_get_comment_text( $text, $comment ) {
-	$isPasswordRequest = get_comment_meta( $comment->comment_ID, 'orbis_keychain_password_request', true );
+	$is_password_request = get_comment_meta( $comment->comment_ID, 'orbis_keychain_password_request', true );
 
-	if ( $isPasswordRequest ) {
-		$currentDate = new DateTime();
+	if ( $is_password_request ) {
+		$current_date = new DateTime();
 
-		$visibleTillDate = new DateTime( $comment->comment_date );
-		$visibleTillDate->modify( '+2 days' );
+		$visible_till_date = new DateTime( $comment->comment_date );
+		$visible_till_date->modify( '+2 days' );
 
 		$str  = '';
 
 		$str .= '<div style="font-style: italic;">';
 
-		$currentUser = wp_get_current_user();
-		$isCurrentUser = $currentUser->ID == $comment->user_id;
+		$current_user = wp_get_current_user();
+		$is_current_user = $current_user->ID === $comment->user_id;
 
-		$wordCount = str_word_count( $comment->comment_content );
-		$wordCountRequired = orbis_keychain_get_password_required_word_count();
-		$isCommentEnough = $wordCount >= $wordCountRequired;
+		$word_count = str_word_count( $comment->comment_content );
+		$word_count_required = orbis_keychain_get_password_required_word_count();
+		$is_comment_enough = $word_count >= $word_count_required;
 
-		$isWithinDate = $visibleTillDate->format( 'U' ) > $currentDate->format( 'U' );
+		$is_within_date = $visible_till_date->format( 'U' ) > $current_date->format( 'U' );
 
-		if ( $isCommentEnough ) {
+		if ( $is_comment_enough ) {
 			$str .= '<p>';
 			$str .= '	' . sprintf(
 				__( 'This comment was an password request, the user can view the password till <strong>%s</strong>.', 'orbis_keychains' ),
-				$visibleTillDate->format( DATE_W3C )
+				$visible_till_date->format( DATE_W3C )
 			);
 			$str .= '</p>';
 		} else {
 			$str .= '<p>';
 			$str .= '	' . sprintf(
 				__( 'This comment was met <strong>%d words</strong> not long enough to display the password, use at least <strong>%d words</strong>.', 'orbis_keychains' ),
-				$wordCount,
-				$wordCountRequired
+				$word_count,
+				$word_count_required
 			);
 			$str .= '</p>';
 		}
 
-		if ( $isCurrentUser && $isCommentEnough && $isWithinDate ) {
+		if ( $is_current_user && $is_comment_enough && $is_within_date ) {
 			$url      = get_post_meta( $comment->comment_post_ID, '_orbis_keychain_url', true );
 			$username = get_post_meta( $comment->comment_post_ID, '_orbis_keychain_username', true );
 			$password = get_post_meta( $comment->comment_post_ID, '_orbis_keychain_password', true );
@@ -334,7 +334,7 @@ add_filter( 'comment_text', 'orbis_keychain_get_comment_text', 20, 2 );
  * Keychain content
 */
 function orbis_keychain_the_content( $content ) {
-	if ( 'orbis_keychain' == get_post_type() ) {
+	if ( 'orbis_keychain' === get_post_type() ) {
 		$id = get_the_ID();
 
 		$url      = get_post_meta( $id, '_orbis_keychain_url', true );
@@ -353,7 +353,7 @@ function orbis_keychain_the_content( $content ) {
 		$str .= '	<dd>' . sprintf( '<input type="text" class="form-control" value="%s" readonly="readonly" />', esc_attr( $username ) ) . '</dd>';
 
 		$str .= '	<dt>' . __( 'Password', 'orbis_keychains' ) . '</dt>';
-		$str .= '	<dd>' . '********' . '</dd>';
+		$str .= '	<dd>********</dd>';
 
 		if ( ! empty( $email ) ) {
 			$str .= '	<dt>' . __( 'E-mail Address', 'orbis_keychains' ) . '</dt>';
@@ -392,7 +392,7 @@ function orbis_keychain_edit_columns( $columns ) {
 		'orbis_keychain_categories' => __( 'Categories', 'orbis_keychains' ),
 		'orbis_keychain_tags'       => __( 'Tags', 'orbis_keychains' ),
 		'comments'                  => __( 'Comments', 'orbis_keychains' ),
-		'date'                      => __( 'Date', 'orbis_keychains' )
+		'date'                      => __( 'Date', 'orbis_keychains' ),
 	);
 }
 

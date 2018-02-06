@@ -14,9 +14,10 @@ module.exports = function( grunt ) {
 				dir: [ '.' ],
 			},
 			options: {
+				bin: 'vendor/bin/phpcs',
 				standard: 'phpcs.ruleset.xml',
 				extensions: 'php',
-				ignore: '<%= dirs.ignore %>'
+				ignore: '<%= dirs.ignore %>',
 			}
 		},
 		
