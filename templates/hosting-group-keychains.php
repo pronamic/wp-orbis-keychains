@@ -7,8 +7,8 @@ $control_panel_keychain_id = get_post_meta( $post->ID, '_orbis_hosting_group_con
 if ( ! empty( $control_panel_keychain_id ) ) : ?>
 
 	<div class="card">
+		<div class="card-header"><?php esc_html_e( 'Keychains', 'orbis_keychains' ); ?></div>
 		<div class="card-body">
-			<h3 class="card-title"><?php esc_html_e( 'Keychains', 'orbis_keychains' ); ?></h3>
 
 			<div class="content">
 				<dl>
