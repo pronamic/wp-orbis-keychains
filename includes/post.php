@@ -137,6 +137,10 @@ function orbis_save_keychain_details( $post_id, $post ) {
 		'_orbis_keychain_email'    => FILTER_VALIDATE_EMAIL,
 		'_orbis_keychain_username' => FILTER_SANITIZE_STRING,
 		'_orbis_keychain_password' => FILTER_UNSAFE_RAW,
+		'_orbis_keychain_username' => FILTER_SANITIZE_STRING,
+		'_orbis_keychain_path'     => FILTER_SANITIZE_STRING,
+		'_orbis_keychain_port'     => FILTER_SANITIZE_STRING,
+		'_orbis_keychain_has_cli'  => FILTER_VALIDATE_BOOLEAN,
 	);
 
 	$data = wp_slash( filter_input_array( INPUT_POST, $definition ) );

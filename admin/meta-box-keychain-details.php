@@ -8,6 +8,9 @@ $url      = get_post_meta( $post->ID, '_orbis_keychain_url', true );
 $username = get_post_meta( $post->ID, '_orbis_keychain_username', true );
 $password = get_post_meta( $post->ID, '_orbis_keychain_password', true );
 $email    = get_post_meta( $post->ID, '_orbis_keychain_email', true );
+$path     = get_post_meta( $post->ID, '_orbis_keychain_path', true );
+$port     = get_post_meta( $post->ID, '_orbis_keychain_port', true );
+$wpcli    = get_post_meta( $post->ID, '_orbis_keychain_has_cli', true );
 
 ?>
 <table class="form-table">
@@ -44,4 +47,33 @@ $email    = get_post_meta( $post->ID, '_orbis_keychain_email', true );
 			<input id="orbis_keychain_email" name="_orbis_keychain_email" value="<?php echo esc_attr( $email ); ?>" type="email" class="regular-text" />
 		</td>
 	</tr>
+	<tr valign="top">
+		<th scope="row">
+			<label for="orbis_keychain_path"><?php esc_html_e( 'Path', 'orbis_keychains' ); ?></label>
+		</th>
+		<td>
+			<input id="orbis_keychain_path" name="_orbis_keychain_path" value="<?php echo esc_attr( $path ); ?>" type="text" class="regular-text" />
+		</td>
+	</tr>
+	<tr valign="top">
+		<th scope="row">
+			<label for="orbis_keychain_port"><?php esc_html_e( 'Port', 'orbis_keychains' ); ?></label>
+		</th>
+		<td>
+			<input id="orbis_keychain_port" name="_orbis_keychain_port" value="<?php echo esc_attr( $port ); ?>" type="text" class="regular-text" />
+		</td>
+	</tr>
+	<tr valign="top">
+			<th scope="row">
+				<label for="_orbis_keychain_has_cli">
+					<?php esc_html_e( 'WP-CLI', 'orbis_keychains' ); ?>
+				</label>
+			</th>
+			<td>
+				<label for="_orbis_keychain_has_cli">
+					<input type="checkbox" value="yes" id="_orbis_keychain_has_cli" name="_orbis_keychain_has_cli" <?php checked( $wpcli ); ?> />
+					<?php esc_html_e( 'WP-CLI is enabled.', 'orbis_keychains' ); ?>
+				</label>
+			</td>
+		</tr>
 </table>
