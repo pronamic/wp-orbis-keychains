@@ -74,7 +74,7 @@ class Orbis_Keychains_Admin {
 		if ( isset( $args['description'] ) ) {
 			printf(
 				'<p class="description">%s</p>',
-				$args['description']
+				esc_html( $args['description'] )
 			);
 		}
 	}

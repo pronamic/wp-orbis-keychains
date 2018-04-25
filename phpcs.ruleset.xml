@@ -12,5 +12,6 @@
 		<exclude name="WordPress.VIP.RestrictedVariables.user_meta" />
 
 		<exclude name="WordPress.WP.PreparedSQL.NotPrepared" />
+		<exclude name="WordPress.Files.FileName.UnderscoresNotAllowed" />
 	</rule>
 </ruleset>

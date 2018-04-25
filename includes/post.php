@@ -218,8 +218,8 @@ function orbis_keychain_comment_form( $post_id ) {
 				<?php
 
 				printf(
-					__( 'Request password, describe with at least <strong>%d words</strong> why you need this password.', 'orbis_keychains' ),
-					orbis_keychain_get_password_required_word_count()
+					wp_kses_post( __( 'Request password, describe with at least <strong>%d words</strong> why you need this password.', 'orbis_keychains' ) ),
+					wp_kses_post( orbis_keychain_get_password_required_word_count() )
 				);
 
 				?>
