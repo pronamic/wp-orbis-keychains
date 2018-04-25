@@ -1,23 +1,26 @@
 module.exports = function( grunt ) {
 	// Project configuration.
+
+	var phpFiles = [
+		'**/*.php',
+		'!bower_components/**',
+		'!deploy/**',
+		'!node_modules/**',
+		'!vendor/**'
+	];
 	grunt.initConfig( {
 		// Package
 		pkg: grunt.file.readJSON( 'package.json' ),
 
-		dirs: {
-			ignore: [ 'build', 'node_modules', 'vendor' ].join( ',' ) 
-		},
-
 		// PHP Code Sniffer
 		phpcs: {
 			application: {
-				dir: [ '.' ],
+				src: phpFiles
 			},
 			options: {
 				bin: 'vendor/bin/phpcs',
 				standard: 'phpcs.ruleset.xml',
-				extensions: 'php',
-				ignore: '<%= dirs.ignore %>',
+				showSniffCodes: true
 			}
 		},
 		
