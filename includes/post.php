@@ -22,10 +22,20 @@ function orbis_keychains_create_initial_post_types() {
 			'public'          => true,
 			'menu_position'   => 30,
 			'menu_icon'       => 'dashicons-admin-network',
-			'capability_type' => array( 'keychain', 'keychains' ),
-			'supports'        => array( 'title', 'editor', 'author', 'comments' ),
+			'capability_type' => array(
+				'keychain',
+				'keychains',
+			),
+			'supports'        => array(
+				'title',
+				'editor',
+				'author',
+				'comments',
+			),
 			'has_archive'     => true,
-			'rewrite'         => array( 'slug' => _x( 'keychains', 'slug', 'orbis_keychains' ) ),
+			'rewrite'         => array(
+				'slug' => _x( 'keychains', 'slug', 'orbis_keychains' ),
+			),
 		)
 	);
 }
