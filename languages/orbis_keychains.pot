@@ -1,17 +1,17 @@
-# Copyright (C) 2014 Pronamic
+# Copyright (C) 2018 Pronamic
 # This file is distributed under the Copyright (c) Pronamic.
 msgid ""
 msgstr ""
 "Project-Id-Version: Orbis Keychains 1.0.3\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis-keychains\n"
-"POT-Creation-Date: 2014-11-07 09:12:38+00:00\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis-keychains\n"
+"POT-Creation-Date: 2018-04-26 09:21:19+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.4.9\n"
+"X-Generator: grunt-wp-i18n1.0.2\n"
 
 #: admin/meta-box-domain-name-keychains.php:15 includes/hosting.php:146
 msgid "FTP"
@@ -26,43 +26,59 @@ msgid "WordPress"
 msgstr ""
 
 #: admin/meta-box-hosting-group-keychains.php:13
-#: templates/hosting-group-keychains.php:17
+#: templates/hosting-group-keychains.php:16
 msgid "Control Panel"
 msgstr ""
 
-#: admin/meta-box-keychain-details.php:16 includes/post.php:305
-#: includes/post.php:349 includes/post.php:388
+#: admin/meta-box-keychain-details.php:19 includes/post.php:322
+#: includes/post.php:369 includes/post.php:423
 msgid "URL"
 msgstr ""
 
-#: admin/meta-box-keychain-details.php:20
+#: admin/meta-box-keychain-details.php:23
 msgid ""
 "Use an full URL: for HTTP <code>http://</code>, for FTP "
 "<code>ftp://</code>, for SFTP <code>sftp://</code>"
 msgstr ""
 
-#: admin/meta-box-keychain-details.php:25 includes/post.php:309
-#: includes/post.php:352 includes/post.php:389
+#: admin/meta-box-keychain-details.php:28 includes/post.php:326
+#: includes/post.php:372 includes/post.php:424
 msgid "Username"
 msgstr ""
 
-#: admin/meta-box-keychain-details.php:33 includes/post.php:312
-#: includes/post.php:355
+#: admin/meta-box-keychain-details.php:36 includes/post.php:329
+#: includes/post.php:375
 msgid "Password"
 msgstr ""
 
-#: admin/meta-box-keychain-details.php:41 includes/post.php:316
-#: includes/post.php:359 includes/post.php:390
+#: admin/meta-box-keychain-details.php:44 includes/post.php:333
+#: includes/post.php:379 includes/post.php:425
 msgid "E-mail Address"
 msgstr ""
 
-#: classes/orbis-keychains-admin.php:41 includes/hosting.php:9
+#: admin/meta-box-keychain-details.php:52 includes/post.php:384
+msgid "Path"
+msgstr ""
+
+#: admin/meta-box-keychain-details.php:60 includes/post.php:389
+msgid "Port"
+msgstr ""
+
+#: admin/meta-box-keychain-details.php:69
+msgid "WP-CLI"
+msgstr ""
+
+#: admin/meta-box-keychain-details.php:75
+msgid "WP-CLI is enabled."
+msgstr ""
+
+#: classes/orbis-keychains-admin.php:42 includes/hosting.php:9
 #: includes/hosting.php:18 includes/hosting.php:141 includes/post.php:9
-#: includes/post.php:11 templates/hosting-group-keychains.php:11
+#: includes/post.php:11 templates/hosting-group-keychains.php:10
 msgid "Keychains"
 msgstr ""
 
-#: classes/orbis-keychains-admin.php:48
+#: classes/orbis-keychains-admin.php:49
 msgid "Word Count"
 msgstr ""
 
@@ -98,69 +114,81 @@ msgstr ""
 msgid "No keychains found in Trash"
 msgstr ""
 
-#: includes/post.php:54
+#: includes/post.php:67
 msgid "Administrator"
 msgstr ""
 
-#: includes/post.php:58
+#: includes/post.php:71
 msgid "Editor"
 msgstr ""
 
-#: includes/post.php:93
+#: includes/post.php:106
 msgid "Keychain Details"
 msgstr ""
 
-#: includes/post.php:174
+#: includes/post.php:191
 msgid "The password '%s' was changed to '%s' by %s."
 msgstr ""
 
-#: includes/post.php:217
+#: includes/post.php:234
 msgid ""
 "Request password, describe with at least <strong>%d words</strong> why you "
 "need this password."
 msgstr ""
 
-#: includes/post.php:274
+#: includes/post.php:291
 msgid ""
 "This comment was an password request, the user can view the password till "
 "<strong>%s</strong>."
 msgstr ""
 
-#: includes/post.php:281
+#: includes/post.php:298
 msgid ""
 "This comment was met <strong>%d words</strong> not long enough to display "
 "the password, use at least <strong>%d words</strong>."
 msgstr ""
 
-#: includes/post.php:301
+#: includes/post.php:318
 msgid "URL Full"
 msgstr ""
 
-#: includes/post.php:369
-msgid "Login"
+#: includes/post.php:393
+msgid "Yes"
 msgstr ""
 
-#: includes/post.php:387
-msgid "Title"
-msgstr ""
-
-#: includes/post.php:391
-msgid "Author"
-msgstr ""
-
-#: includes/post.php:392 includes/taxonomy.php:22
-msgid "Categories"
-msgstr ""
-
-#: includes/post.php:393 includes/taxonomy.php:48
-msgid "Tags"
-msgstr ""
-
-#: includes/post.php:394
-msgid "Comments"
+#: includes/post.php:393
+msgid "No"
 msgstr ""
 
 #: includes/post.php:395
+msgid "WP-CLI Enabled"
+msgstr ""
+
+#: includes/post.php:404
+msgid "Login"
+msgstr ""
+
+#: includes/post.php:422
+msgid "Title"
+msgstr ""
+
+#: includes/post.php:426
+msgid "Author"
+msgstr ""
+
+#: includes/post.php:427 includes/taxonomy.php:22
+msgid "Categories"
+msgstr ""
+
+#: includes/post.php:428 includes/taxonomy.php:48
+msgid "Tags"
+msgstr ""
+
+#: includes/post.php:429
+msgid "Comments"
+msgstr ""
+
+#: includes/post.php:430
 msgid "Date"
 msgstr ""
 
@@ -255,7 +283,7 @@ msgctxt "orbis_keychain"
 msgid "Add New"
 msgstr ""
 
-#: includes/post.php:28
+#: includes/post.php:37
 msgctxt "slug"
 msgid "keychains"
 msgstr ""
