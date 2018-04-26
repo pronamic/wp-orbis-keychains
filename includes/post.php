@@ -277,7 +277,7 @@ function orbis_keychain_get_comment_text( $text, $comment ) {
 		$str .= '<div style="font-style: italic;">';
 
 		$current_user = wp_get_current_user();
-		$is_current_user = $current_user->ID === $comment->user_id;
+		$is_current_user = $current_user->ID == $comment->user_id; // WPCS: loose comparison ok.
 
 		$word_count = str_word_count( $comment->comment_content );
 		$word_count_required = orbis_keychain_get_password_required_word_count();
