@@ -37,6 +37,7 @@ function orbis_keychains_create_initial_post_types() {
 				'slug'       => _x( 'keychains', 'slug', 'orbis_keychains' ),
 				'with_front' => false,
 			),
+			'show_in_rest'    => true,
 		)
 	);
 }
