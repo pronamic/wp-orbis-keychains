@@ -20,7 +20,7 @@ $wpcli    = get_post_meta( $post->ID, '_orbis_keychain_has_cli', true );
 		</th>
 		<td>
 			<input id="orbis_keychain_url" name="_orbis_keychain_url" value="<?php echo esc_attr( $url ); ?>" type="url" class="regular-text" />
-			<span class="description"><br /><?php esc_html_e( 'Use an full URL: for HTTP <code>http://</code>, for FTP <code>ftp://</code>, for SFTP <code>sftp://</code>', 'orbis_keychains' ); ?></span>
+			<span class="description"><br /><?php echo wp_kses_post( __( 'Use an full URL: for HTTP <code>http://</code>, for FTP <code>ftp://</code>, for SFTP <code>sftp://</code>', 'orbis_keychains' ) ); ?></span>
 		</td>
 	</tr>
 	<tr valign="top">
