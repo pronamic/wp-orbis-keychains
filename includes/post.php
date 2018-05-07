@@ -150,10 +150,6 @@ function orbis_save_keychain_details( $post_id, $post ) {
 		'_orbis_keychain_email'    => FILTER_VALIDATE_EMAIL,
 		'_orbis_keychain_username' => FILTER_SANITIZE_STRING,
 		'_orbis_keychain_password' => FILTER_UNSAFE_RAW,
-		'_orbis_keychain_username' => FILTER_SANITIZE_STRING,
-		'_orbis_keychain_path'     => FILTER_SANITIZE_STRING,
-		'_orbis_keychain_port'     => FILTER_SANITIZE_STRING,
-		'_orbis_keychain_has_cli'  => FILTER_VALIDATE_BOOLEAN,
 	);
 
 	$data = wp_slash( filter_input_array( INPUT_POST, $definition ) );
@@ -358,10 +354,6 @@ function orbis_keychain_the_content( $content ) {
 		$email    = get_post_meta( $id, '_orbis_keychain_email', true );
 		$username = get_post_meta( $id, '_orbis_keychain_username', true );
 		$password = get_post_meta( $id, '_orbis_keychain_password', true );
-		$path     = get_post_meta( $id, '_orbis_keychain_path', true );
-		$port     = get_post_meta( $id, '_orbis_keychain_port', true );
-		$wpcli    = get_post_meta( $id, '_orbis_keychain_has_cli', true );
-
 		$str  = '';
 
 		$str .= '<dl>';
@@ -379,21 +371,6 @@ function orbis_keychain_the_content( $content ) {
 			$str .= '	<dt>' . __( 'E-mail Address', 'orbis_keychains' ) . '</dt>';
 			$str .= '	<dd>' . sprintf( '<a href="mailto:%s">%s</a>', $email, $email ) . '</dd>';
 		}
-
-		if ( ! empty( $path ) ) {
-			$str .= '	<dt>' . __( 'Path', 'orbis_keychains' ) . '</dt>';
-			$str .= '	<dd>' . esc_html( $path ) . '</dd>';
-		}
-
-		if ( ! empty( $port ) ) {
-			$str .= '	<dt>' . __( 'Port', 'orbis_keychains' ) . '</dt>';
-			$str .= '	<dd>' . esc_html( $port ) . '</dd>';
-		}
-
-		$wpcli_enabled = ($wpcli) ? __( 'Yes', 'orbis_keychains' ) : __( 'No', 'orbis_keychains' );
-
-		$str .= '	<dt>' . __( 'WP-CLI Enabled', 'orbis_keychains' ) . '</dt>';
-		$str .= '	<dd>' . esc_html( $wpcli_enabled ) . '</dd>';
 
 		$str .= '</dl>';
 
