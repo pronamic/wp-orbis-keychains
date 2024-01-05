@@ -1,8 +1,28 @@
 module.exports = function( grunt ) {
 	// Project configuration.
+
+	var phpFiles = [
+		'**/*.php',
+		'!bower_components/**',
+		'!deploy/**',
+		'!node_modules/**',
+		'!vendor/**'
+	];
 	grunt.initConfig( {
 		// Package
 		pkg: grunt.file.readJSON( 'package.json' ),
+
+		// PHP Code Sniffer
+		phpcs: {
+			application: {
+				src: phpFiles
+			},
+			options: {
+				bin: 'vendor/bin/phpcs',
+				standard: 'phpcs.ruleset.xml',
+				showSniffCodes: true
+			}
+		},
 		
 		// PHPLint
 		phplint: {
@@ -44,10 +64,12 @@ module.exports = function( grunt ) {
 		}
 	} );
 
+	grunt.loadNpmTasks( 'grunt-phpcs' );
 	grunt.loadNpmTasks( 'grunt-phplint' );
 	grunt.loadNpmTasks( 'grunt-checkwpversion' );
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 
 	// Default task(s).
-	grunt.registerTask( 'default', [ 'phplint', 'checkwpversion', 'makepot' ] );
+	grunt.registerTask( 'default', [ 'phplint', 'phpcs', 'checkwpversion' ] );
+	grunt.registerTask( 'pot', [ 'makepot' ] );
 };

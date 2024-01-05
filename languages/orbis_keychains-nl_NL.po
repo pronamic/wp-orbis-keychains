@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Orbis Keychains\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis-keychains\n"
-"POT-Creation-Date: 2014-03-07 15:32:06+00:00\n"
-"PO-Revision-Date: 2014-03-07 16:32+0100\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis-keychains\n"
+"POT-Creation-Date: 2018-05-07 09:44:45+00:00\n"
+"PO-Revision-Date: 2018-05-07 11:48+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -11,29 +11,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;_x:2c,1\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.7.4\n"
 
-#: admin/meta-box-domain-name-keychains.php:11 includes/hosting.php:146
+#: admin/meta-box-domain-name-keychains.php:15 includes/hosting.php:146
 msgid "FTP"
 msgstr "FTP"
 
-#: admin/meta-box-domain-name-keychains.php:19 includes/hosting.php:151
+#: admin/meta-box-domain-name-keychains.php:23 includes/hosting.php:151
 msgid "Google Apps"
 msgstr "Google Apps"
 
-#: admin/meta-box-domain-name-keychains.php:27 includes/hosting.php:156
+#: admin/meta-box-domain-name-keychains.php:31 includes/hosting.php:156
 msgid "WordPress"
 msgstr "WordPress"
 
-#: admin/meta-box-hosting-group-keychains.php:11
-#: templates/hosting-group-keychains.php:17
+#: admin/meta-box-hosting-group-keychains.php:13
+#: templates/hosting-group-keychains.php:16
 msgid "Control Panel"
 msgstr "Bedieningspaneel"
 
-#: admin/meta-box-keychain-details.php:16 includes/post.php:305
-#: includes/post.php:349 includes/post.php:388
+#: admin/meta-box-keychain-details.php:16 includes/post.php:318
+#: includes/post.php:361 includes/post.php:400
 msgid "URL"
 msgstr "URL"
 
@@ -45,26 +45,30 @@ msgstr ""
 "Gebruik een volledige URL: voor HTTP <code>http://</code>, voor FTP "
 "<code>ftp://</code>, voor SFTP <code>sftp://</code>"
 
-#: admin/meta-box-keychain-details.php:25 includes/post.php:309
-#: includes/post.php:352 includes/post.php:389
+#: admin/meta-box-keychain-details.php:25 includes/post.php:322
+#: includes/post.php:364 includes/post.php:401
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: admin/meta-box-keychain-details.php:33 includes/post.php:312
-#: includes/post.php:355
+#: admin/meta-box-keychain-details.php:33 includes/post.php:325
+#: includes/post.php:367
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: admin/meta-box-keychain-details.php:41 includes/post.php:316
-#: includes/post.php:359 includes/post.php:390
+#: admin/meta-box-keychain-details.php:41 includes/post.php:329
+#: includes/post.php:371 includes/post.php:402
 msgid "E-mail Address"
 msgstr "E-mailadres"
 
-#: includes/hosting.php:9 includes/hosting.php:18 includes/hosting.php:141
-#: includes/post.php:9 includes/post.php:11
-#: templates/hosting-group-keychains.php:11
+#: classes/orbis-keychains-admin.php:42 includes/hosting.php:9
+#: includes/hosting.php:18 includes/hosting.php:141 includes/post.php:9
+#: includes/post.php:11 templates/hosting-group-keychains.php:10
 msgid "Keychains"
 msgstr "Sleutelhangers"
+
+#: classes/orbis-keychains-admin.php:49
+msgid "Word Count"
+msgstr "Aantal woorden"
 
 #: includes/post.php:12
 msgid "Keychain"
@@ -98,23 +102,23 @@ msgstr "Geen sleutelhangers gevonden"
 msgid "No keychains found in Trash"
 msgstr "Geen sleutelhangers gevonden in prullenbak"
 
-#: includes/post.php:54
+#: includes/post.php:67
 msgid "Administrator"
 msgstr "Beheerder"
 
-#: includes/post.php:60
+#: includes/post.php:71
 msgid "Editor"
 msgstr "Auteur"
 
-#: includes/post.php:99
+#: includes/post.php:106
 msgid "Keychain Details"
 msgstr "Sleutelhanger details"
 
-#: includes/post.php:180
+#: includes/post.php:187
 msgid "The password '%s' was changed to '%s' by %s."
 msgstr "Het wachtwoord '%s' werd gewijzigd naar '%s' door %s."
 
-#: includes/post.php:220
+#: includes/post.php:230
 msgid ""
 "Request password, describe with at least <strong>%d words</strong> why you "
 "need this password."
@@ -122,7 +126,7 @@ msgstr ""
 "Wachtwoord verzoek, beschrijf met minimaal <strong>%d woorden</strong> "
 "waarom je dit wachtwoord nodig hebt."
 
-#: includes/post.php:274
+#: includes/post.php:287
 msgid ""
 "This comment was an password request, the user can view the password till "
 "<strong>%s</strong>."
@@ -130,7 +134,7 @@ msgstr ""
 "Deze reactie was een wachtwoord verzoek, de gebruiker kan het wachtwoord "
 "bekijken tot <strong>%s</strong>."
 
-#: includes/post.php:281
+#: includes/post.php:294
 msgid ""
 "This comment was met <strong>%d words</strong> not long enough to display "
 "the password, use at least <strong>%d words</strong>."
@@ -138,35 +142,35 @@ msgstr ""
 "Deze reactie was met <strong>%d woorden</strong> niet lang genoeg om het "
 "wachtwoord weer te geven, gebruik minimaal <strong>%d woorden</strong>."
 
-#: includes/post.php:301
+#: includes/post.php:314
 msgid "URL Full"
 msgstr "URL volledig"
 
-#: includes/post.php:369
+#: includes/post.php:381
 msgid "Login"
 msgstr "Inloggen"
 
-#: includes/post.php:387
+#: includes/post.php:399
 msgid "Title"
 msgstr "Titel"
 
-#: includes/post.php:391
+#: includes/post.php:403
 msgid "Author"
 msgstr "Auteur"
 
-#: includes/post.php:392 includes/taxonomy.php:22
+#: includes/post.php:404 includes/taxonomy.php:22
 msgid "Categories"
 msgstr "Categorieën"
 
-#: includes/post.php:393 includes/taxonomy.php:48
+#: includes/post.php:405 includes/taxonomy.php:48
 msgid "Tags"
 msgstr "Tags"
 
-#: includes/post.php:394
+#: includes/post.php:406
 msgid "Comments"
 msgstr "Reacties"
 
-#: includes/post.php:395
+#: includes/post.php:407
 msgid "Date"
 msgstr "Datum"
 
@@ -263,7 +267,7 @@ msgctxt "orbis_keychain"
 msgid "Add New"
 msgstr "Nieuwe sleutelhanger"
 
-#: includes/post.php:28
+#: includes/post.php:37
 msgctxt "slug"
 msgid "keychains"
 msgstr "sleutelhangers"
@@ -297,6 +301,27 @@ msgstr "Tags"
 msgctxt "orbis_keychain_category"
 msgid "Tag"
 msgstr "Tag"
+
+#~ msgid "Path"
+#~ msgstr "Pad"
+
+#~ msgid "Port"
+#~ msgstr "Poort"
+
+#~ msgid "WP-CLI"
+#~ msgstr "WP-CLI"
+
+#~ msgid "WP-CLI is enabled."
+#~ msgstr "WP-CLI is geactiveerd."
+
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgid "No"
+#~ msgstr "Nee"
+
+#~ msgid "WP-CLI Enabled"
+#~ msgstr "WP-CLI geactiveerd"
 
 #~ msgid "I changed the password of this keychain."
 #~ msgstr "Ik heb het wachtwoord van deze sleutelhanger gewijzigd."

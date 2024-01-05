@@ -19,15 +19,15 @@ if ( ! function_exists( 'http_build_url' ) ) {
 	define( 'HTTP_URL_STRIP_ALL', 1024 );     // Strip anything but scheme and host
 
 	// Build an URL
-	// The parts of the second URL will be merged into the first according to the flags argument. 
-	// 
+	// The parts of the second URL will be merged into the first according to the flags argument.
+	//
 	// @param  mixed      (Part(s) of) an URL in form of a string or associative array like parse_url() returns
 	// @param  mixed      Same as the first argument
 	// @param  int        A bitmask of binary or'ed HTTP_URL constants (Optional)HTTP_URL_REPLACE is the default
-	// @param  array      If set, it will be filled with the parts of the composed url like parse_url() would return 
-    function http_build_url( $url, $parts = array(), $flags = HTTP_URL_REPLACE, &$new_url = false ) {
+	// @param  array      If set, it will be filled with the parts of the composed url like parse_url() would return
+	function http_build_url( $url, $parts = array(), $flags = HTTP_URL_REPLACE, &$new_url = false ) {
 		$keys = array( 'user', 'pass', 'port', 'path', 'query', 'fragment' );
-      
+
 		if ( $flags & HTTP_URL_STRIP_ALL ) {
 			// HTTP_URL_STRIP_ALL becomes all the HTTP_URL_STRIP_Xs
 			$flags |= HTTP_URL_STRIP_USER;
@@ -41,51 +41,57 @@ if ( ! function_exists( 'http_build_url' ) ) {
 			$flags |= HTTP_URL_STRIP_USER;
 			$flags |= HTTP_URL_STRIP_PASS;
 		}
-      
-		// Parse the original URL
-		$parse_url = parse_url( $url );
-      
-		// Scheme and Host are always replaced
-		if ( isset( $parts['scheme'] ) )
-			$parse_url['scheme'] = $parts['scheme'];
 
-		if ( isset( $parts['host'] ) )
+		// Parse the original URL
+		$parse_url = wp_parse_url( $url );
+
+		// Scheme and Host are always replaced
+		if ( isset( $parts['scheme'] ) ) {
+			$parse_url['scheme'] = $parts['scheme'];
+		}
+
+		if ( isset( $parts['host'] ) ) {
 			$parse_url['host'] = $parts['host'];
-      
-			// (If applicable) Replace the original URL with it's new parts
-			if ( $flags & HTTP_URL_REPLACE ) {
-				foreach ( $keys as $key ) {
-					if ( isset( $parts[$key] ) )
-						$parse_url[$key] = $parts[$key];
+		}
+
+		// (If applicable) Replace the original URL with it's new parts
+		if ( $flags & HTTP_URL_REPLACE ) {
+			foreach ( $keys as $key ) {
+				if ( isset( $parts[ $key ] ) ) {
+					$parse_url[ $key ] = $parts[ $key ];
 				}
-			} else {
-				// Join the original URL path with the new path
-				if ( isset( $parts['path'] ) && ( $flags & HTTP_URL_JOIN_PATH ) ) {
-					if ( isset( $parse_url['path'] ) )
-						$parse_url['path'] = rtrim( str_replace( basename( $parse_url['path'] ), '', $parse_url['path']), '/' ) . '/' . ltrim( $parts['path'], '/' );
-					else
-						$parse_url['path'] = $parts['path'];
+			}
+		} else {
+			// Join the original URL path with the new path
+			if ( isset( $parts['path'] ) && ( $flags & HTTP_URL_JOIN_PATH ) ) {
+				if ( isset( $parse_url['path'] ) ) {
+					$parse_url['path'] = rtrim( str_replace( basename( $parse_url['path'] ), '', $parse_url['path'] ), '/' ) . '/' . ltrim( $parts['path'], '/' );
+				} else {
+					$parse_url['path'] = $parts['path'];
+				}
 			}
 
 			// Join the original query string with the new query string
 			if ( isset( $parts['query'] ) && ( $flags & HTTP_URL_JOIN_QUERY ) ) {
-				if ( isset( $parse_url['query'] ) )
+				if ( isset( $parse_url['query'] ) ) {
 					$parse_url['query'] .= '&' . $parts['query'];
-				else
+				} else {
 					$parse_url['query'] = $parts['query'];
+				}
 			}
 		}
-        
+
 		// Strips all the applicable sections of the URL
 		// Note: Scheme and Host are never stripped
 		foreach ( $keys as $key ) {
-			if ( $flags & (int) constant( 'HTTP_URL_STRIP_' . strtoupper( $key ) ) )
-				unset( $parse_url[$key] );
+			if ( $flags & (int) constant( 'HTTP_URL_STRIP_' . strtoupper( $key ) ) ) {
+				unset( $parse_url[ $key ] );
+			}
 		}
 
 		$new_url = $parse_url;
-      
-		return 
+
+		return
 			  ( ( isset( $parse_url['scheme'] ) ) ? $parse_url['scheme'] . '://' : '' )
 			. ( ( isset( $parse_url['user'] ) ) ? $parse_url['user'] . ( ( isset( $parse_url['pass'] ) ) ? ':' . $parse_url['pass'] : '') .'@' : '' )
 			. ( ( isset( $parse_url['host'] ) ) ? $parse_url['host'] : '' )

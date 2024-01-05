@@ -20,9 +20,10 @@ GitHub URI: https://github.com/pronamic/wp-orbis-keychains
 
 function orbis_keychains_bootstrap() {
 	include 'classes/orbis-keychains-plugin.php';
+	include 'classes/orbis-keychains-admin.php';
 
 	global $orbis_keychains_plugin;
-	
+
 	$orbis_keychains_plugin = new Orbis_Keychains_Plugin( __FILE__ );
 }
 

@@ -63,7 +63,7 @@ function orbis_save_domain_name_keychains( $post_id, $post ) {
 	}
 
 	// Check permissions
-	if ( ! ( $post->post_type == 'orbis_domain_name' && current_user_can( 'edit_post', $post_id ) ) ) {
+	if ( ! ( 'orbis_domain_name' === $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
 
@@ -71,7 +71,7 @@ function orbis_save_domain_name_keychains( $post_id, $post ) {
 	$definition = array(
 		'_orbis_domain_name_ftp_keychain_id'         => FILTER_SANITIZE_STRING,
 		'_orbis_domain_name_google_apps_keychain_id' => FILTER_SANITIZE_STRING,
-		'_orbis_domain_name_wordpress_keychain_id'   => FILTER_SANITIZE_STRING
+		'_orbis_domain_name_wordpress_keychain_id'   => FILTER_SANITIZE_STRING,
 	);
 
 	$data = filter_input_array( INPUT_POST, $definition );
@@ -103,13 +103,13 @@ function orbis_save_hosting_group_keychains( $post_id, $post ) {
 	}
 
 	// Check permissions
-	if ( ! ( $post->post_type == 'orbis_hosting_group' && current_user_can( 'edit_post', $post_id ) ) ) {
+	if ( ! ( 'orbis_hosting_group' === $post->post_type && current_user_can( 'edit_post', $post_id ) ) ) {
 		return;
 	}
 
 	// OK
 	$definition = array(
-		'_orbis_hosting_group_control_panel_keychain_id' => FILTER_SANITIZE_STRING
+		'_orbis_hosting_group_control_panel_keychain_id' => FILTER_SANITIZE_STRING,
 	);
 
 	$data = filter_input_array( INPUT_POST, $definition );
@@ -129,12 +129,12 @@ add_action( 'save_post', 'orbis_save_hosting_group_keychains', 10, 2 );
  * Keychain content
 */
 function orbis_domain_name_the_content( $content ) {
-	if ( get_post_type() == 'orbis_domain_name' ) {
+	if ( 'orbis_domain_name' === get_post_type() ) {
 		$id = get_the_ID();
 
-		$ftpKeychainId        = get_post_meta( $id, '_orbis_domain_name_ftp_keychain_id', true );
-		$googleAppsKeychainId = get_post_meta( $id, '_orbis_domain_name_google_apps_keychain_id', true );
-		$wordPressKeychainId  = get_post_meta( $id, '_orbis_domain_name_wordpress_keychain_id', true );
+		$ftp_keychain_id        	= get_post_meta( $id, '_orbis_domain_name_ftp_keychain_id', true );
+		$google_apps_keychain_id 	= get_post_meta( $id, '_orbis_domain_name_google_apps_keychain_id', true );
+		$wordpress_keychain_id  	= get_post_meta( $id, '_orbis_domain_name_wordpress_keychain_id', true );
 
 		$str  = '';
 
@@ -142,19 +142,19 @@ function orbis_domain_name_the_content( $content ) {
 
 		$str .= '<dl>';
 
-		if ( ! empty( $ftpKeychainId ) ) {
+		if ( ! empty( $ftp_keychain_id ) ) {
 			$str .= '	<dt>' . __( 'FTP', 'orbis_keychains' ) . '</dt>';
-			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', get_permalink( $ftpKeychainId ), get_the_title( $ftpKeychainId ) ) . '</dd>';
+			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', get_permalink( $ftp_keychain_id ), get_the_title( $ftp_keychain_id ) ) . '</dd>';
 		}
 
-		if ( ! empty( $googleAppsKeychainId ) ) {
+		if ( ! empty( $google_apps_keychain_id ) ) {
 			$str .= '	<dt>' . __( 'Google Apps', 'orbis_keychains' ) . '</dt>';
-			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', get_permalink( $googleAppsKeychainId ), get_the_title( $googleAppsKeychainId ) ) . '</dd>';
+			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', get_permalink( $google_apps_keychain_id ), get_the_title( $google_apps_keychain_id ) ) . '</dd>';
 		}
 
-		if ( ! empty( $wordPressKeychainId ) ) {
+		if ( ! empty( $wordpress_keychain_id ) ) {
 			$str .= '	<dt>' . __( 'WordPress', 'orbis_keychains' ) . '</dt>';
-			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', get_permalink( $wordPressKeychainId ), get_the_title( $wordPressKeychainId ) ) . '</dd>';
+			$str .= '	<dd>' . sprintf( '<a href="%s">%s</a>', get_permalink( $wordpress_keychain_id ), get_the_title( $wordpress_keychain_id ) ) . '</dd>';
 		}
 
 		$str .= '</dl>';

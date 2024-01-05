@@ -19,13 +19,13 @@ function orbis_keychains_create_initial_taxonomies() {
 				'update_item'       => __( 'Update Category', 'orbis_keychains' ),
 				'add_new_item'      => __( 'Add New Category', 'orbis_keychains' ),
 				'new_item_name'     => __( 'New Category Name', 'orbis_keychains' ),
-				'menu_name'         => __( 'Categories', 'orbis_keychains' )
+				'menu_name'         => __( 'Categories', 'orbis_keychains' ),
 			),
-			'show_ui'      => true, 
-			'query_var'    => true, 
+			'show_ui'      => true,
+			'query_var'    => true,
 			'rewrite'      => array(
-				'slug' => _x( 'keychain-categorie', 'slug', 'orbis_keychains' )
-			)
+				'slug' => _x( 'keychain-categorie', 'slug', 'orbis_keychains' ),
+			),
 		)
 	);
 
@@ -45,13 +45,13 @@ function orbis_keychains_create_initial_taxonomies() {
 				'update_item'       => __( 'Update Tag', 'orbis_keychains' ),
 				'add_new_item'      => __( 'Add New Tag', 'orbis_keychains' ),
 				'new_item_name'     => __( 'New Tag Name', 'orbis_keychains' ),
-				'menu_name'         => __( 'Tags', 'orbis_keychains' )
+				'menu_name'         => __( 'Tags', 'orbis_keychains' ),
 			),
 			'show_ui'      => true,
 			'query_var'    => true,
 			'rewrite'      => array(
-				'slug' => _x( 'keychain-tag', 'slug', 'orbis_keychains' )
-			)
+				'slug' => _x( 'keychain-tag', 'slug', 'orbis_keychains' ),
+			),
 		)
 	);
 }
