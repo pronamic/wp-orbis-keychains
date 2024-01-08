@@ -1,20 +1,20 @@
 {
-    "name": "pronamic/wp-orbis-keychains",
-    "description": "Give your whole team access to all the login details within your organization and keep a log of who used wich login details for what reason.",
-    "license": "GPL-2.0-or-later",
-    "type": "wordpress-plugin",
-    "config": {
-        "allow-plugins": {
-            "automattic/jetpack-autoloader": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
-        }
-    },
-    "require": {
-        "automattic/jetpack-autoloader": "*"
-    },
-    "require-dev": {
-        "pronamic/wp-coding-standards": "^2.1",
-        "pronamic/pronamic-cli": "^1.1"
-    },
-    "scripts": {}
+	"name": "pronamic/wp-orbis-keychains",
+	"description": "Give your whole team access to all the login details within your organization and keep a log of who used wich login details for what reason.",
+	"license": "GPL-2.0-or-later",
+	"type": "wordpress-plugin",
+	"config": {
+		"allow-plugins": {
+			"automattic/jetpack-autoloader": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"require": {
+		"automattic/jetpack-autoloader": "*"
+	},
+	"require-dev": {
+		"pronamic/wp-coding-standards": "^2.1",
+		"pronamic/pronamic-cli": "^1.1"
+	},
+	"scripts": {}
 }
