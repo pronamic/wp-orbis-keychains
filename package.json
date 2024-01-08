@@ -1,38 +1,32 @@
 {
-  "name": "@pronamic/wp-orbis-keychains",
-  "version": "1.0.3",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pronamic/wp-orbis-keychains.git"
-  },
-  "keywords": [
-    "pronamic",
-    "orbis",
-    "crm",
-    "intranet",
-    "keychains",
-    "keychain",
-    "password"
-  ],
-  "author": {
-    "name": "Pronamic",
-    "email": "info@pronamic.nl",
-    "url": "http://www.pronamic.nl/"
-  },
-  "contributors": [
-    {
-      "name": "Remco Tolsma",
-      "email": "info@remcotolsma.nl",
-      "url": "http://www.remcotolsma.nl/"
-    }
-  ],
-  "license": "GPL",
-  "homepage": "https://github.com/pronamic/wp-orbis-keychains",
-  "devDependencies": {
-    "grunt": "~1.5.3",
-    "grunt-phpcs": "^0.4.0",
-    "grunt-phplint": "0.1.0",
-    "grunt-wp-i18n": "~1.0.2",
-    "grunt-checkwpversion": "~0.3.0"
-  }
+	"name": "@pronamic/wp-orbis-keychains",
+	"version": "1.0.3",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pronamic/wp-orbis-keychains.git"
+	},
+	"keywords": [
+		"pronamic",
+		"orbis",
+		"crm",
+		"intranet",
+		"keychains",
+		"keychain",
+		"password"
+	],
+	"author": {
+		"name": "Pronamic",
+		"email": "info@pronamic.nl",
+		"url": "http://www.pronamic.nl/"
+	},
+	"contributors": [
+		{
+			"name": "Remco Tolsma",
+			"email": "info@remcotolsma.nl",
+			"url": "http://www.remcotolsma.nl/"
+		}
+	],
+	"license": "GPL",
+	"homepage": "https://github.com/pronamic/wp-orbis-keychains",
+	"devDependencies": {}
 }
