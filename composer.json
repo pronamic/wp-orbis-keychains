@@ -1,4 +1,8 @@
 {
+    "name": "pronamic/wp-orbis-keychains",
+    "description": "Give your whole team access to all the login details within your organization and keep a log of who used wich login details for what reason.",
+    "license": "GPL-2.0-or-later",
+    "type": "wordpress-plugin",
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.7",
         "wp-coding-standards/wpcs": "0.9.0"
