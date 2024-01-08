@@ -10,7 +10,7 @@ Requires at least: 3.5
 Author: Pronamic
 Author URI: http://www.pronamic.eu/
 
-Text Domain: orbis_keychains
+Text Domain: orbis-keychains
 Domain Path: /languages/
 
 License: Copyright (c) Pronamic

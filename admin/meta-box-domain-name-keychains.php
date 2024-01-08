@@ -12,7 +12,7 @@ $wordpress_keychain_id   = get_post_meta( $post->ID, '_orbis_domain_name_wordpre
 <table class="form-table">
 	<tr valign="top">
 		<th scope="row">
-			<label for="orbis_domain_name_ftp_keychain_id"><?php esc_html_e( 'FTP', 'orbis_keychains' ); ?></label>
+			<label for="orbis_domain_name_ftp_keychain_id"><?php esc_html_e( 'FTP', 'orbis-keychains' ); ?></label>
 		</th>
 		<td>
 			<input id="orbis_domain_name_ftp_keychain_id" name="_orbis_domain_name_ftp_keychain_id" value="<?php echo esc_attr( $ftp_keychain_id ); ?>" type="text" class="regular-text" />
@@ -20,7 +20,7 @@ $wordpress_keychain_id   = get_post_meta( $post->ID, '_orbis_domain_name_wordpre
 	</tr>
 	<tr valign="top">
 		<th scope="row">
-			<label for="orbis_domain_name_google_apps_keychain_id"><?php esc_html_e( 'Google Apps', 'orbis_keychains' ); ?></label>
+			<label for="orbis_domain_name_google_apps_keychain_id"><?php esc_html_e( 'Google Apps', 'orbis-keychains' ); ?></label>
 		</th>
 		<td>
 			<input id="orbis_domain_name_google_apps_keychain_id" name="_orbis_domain_name_google_apps_keychain_id" value="<?php echo esc_attr( $google_apps_keychain_id ); ?>" type="text" class="regular-text" />
@@ -28,7 +28,7 @@ $wordpress_keychain_id   = get_post_meta( $post->ID, '_orbis_domain_name_wordpre
 	</tr>
 	<tr valign="top">
 		<th scope="row">
-			<label for="orbis_domain_name_wordpress_keychain_id"><?php esc_html_e( 'WordPress', 'orbis_keychains' ); ?></label>
+			<label for="orbis_domain_name_wordpress_keychain_id"><?php esc_html_e( 'WordPress', 'orbis-keychains' ); ?></label>
 		</th>
 		<td>
 			<input id="orbis_domain_name_wordpress_keychain_id" name="_orbis_domain_name_wordpress_keychain_id" value="<?php echo esc_attr( $wordpress_keychain_id ); ?>" type="text" class="regular-text" />

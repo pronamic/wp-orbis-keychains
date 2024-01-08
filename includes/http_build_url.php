@@ -25,8 +25,8 @@ if ( ! function_exists( 'http_build_url' ) ) {
 	// @param  mixed      Same as the first argument
 	// @param  int        A bitmask of binary or'ed HTTP_URL constants (Optional)HTTP_URL_REPLACE is the default
 	// @param  array      If set, it will be filled with the parts of the composed url like parse_url() would return
-	function http_build_url( $url, $parts = array(), $flags = HTTP_URL_REPLACE, &$new_url = false ) {
-		$keys = array( 'user', 'pass', 'port', 'path', 'query', 'fragment' );
+	function http_build_url( $url, $parts = [], $flags = HTTP_URL_REPLACE, &$new_url = false ) {
+		$keys = [ 'user', 'pass', 'port', 'path', 'query', 'fragment' ];
 
 		if ( $flags & HTTP_URL_STRIP_ALL ) {
 			// HTTP_URL_STRIP_ALL becomes all the HTTP_URL_STRIP_Xs
@@ -36,7 +36,7 @@ if ( ! function_exists( 'http_build_url' ) ) {
 			$flags |= HTTP_URL_STRIP_PATH;
 			$flags |= HTTP_URL_STRIP_QUERY;
 			$flags |= HTTP_URL_STRIP_FRAGMENT;
-		} else if ( $flags & HTTP_URL_STRIP_AUTH ) {
+		} elseif ( $flags & HTTP_URL_STRIP_AUTH ) {
 			// HTTP_URL_STRIP_AUTH becomes HTTP_URL_STRIP_USER and HTTP_URL_STRIP_PASS
 			$flags |= HTTP_URL_STRIP_USER;
 			$flags |= HTTP_URL_STRIP_PASS;
@@ -91,14 +91,12 @@ if ( ! function_exists( 'http_build_url' ) ) {
 
 		$new_url = $parse_url;
 
-		return
-			  ( ( isset( $parse_url['scheme'] ) ) ? $parse_url['scheme'] . '://' : '' )
-			. ( ( isset( $parse_url['user'] ) ) ? $parse_url['user'] . ( ( isset( $parse_url['pass'] ) ) ? ':' . $parse_url['pass'] : '') .'@' : '' )
+		return ( ( isset( $parse_url['scheme'] ) ) ? $parse_url['scheme'] . '://' : '' )
+			. ( ( isset( $parse_url['user'] ) ) ? $parse_url['user'] . ( ( isset( $parse_url['pass'] ) ) ? ':' . $parse_url['pass'] : '' ) . '@' : '' )
 			. ( ( isset( $parse_url['host'] ) ) ? $parse_url['host'] : '' )
 			. ( ( isset( $parse_url['port'] ) ) ? ':' . $parse_url['port'] : '' )
 			. ( ( isset( $parse_url['path'] ) ) ? $parse_url['path'] : '' )
 			. ( ( isset( $parse_url['query'] ) ) ? '?' . $parse_url['query'] : '' )
-			. ( ( isset( $parse_url['fragment'] ) ) ? '#' . $parse_url['fragment'] : '' )
-		;
+			. ( ( isset( $parse_url['fragment'] ) ) ? '#' . $parse_url['fragment'] : '' );
 	}
 }

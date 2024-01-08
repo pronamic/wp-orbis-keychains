@@ -10,7 +10,7 @@ $keychain_id = get_post_meta( $post->ID, '_orbis_hosting_group_control_panel_key
 <table class="form-table">
 	<tr valign="top">
 		<th scope="row">
-			<label for="orbis_hosting_group_control_panel_keychain_id"><?php esc_html_e( 'Control Panel', 'orbis_keychains' ); ?></label>
+			<label for="orbis_hosting_group_control_panel_keychain_id"><?php esc_html_e( 'Control Panel', 'orbis-keychains' ); ?></label>
 		</th>
 		<td>
 			<input id="orbis_hosting_group_control_panel_keychain_id" name="_orbis_hosting_group_control_panel_keychain_id" value="<?php echo esc_attr( $keychain_id ); ?>" type="text" class="regular-text" />
