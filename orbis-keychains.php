@@ -18,6 +18,14 @@ License: Copyright (c) Pronamic
 GitHub URI: https://github.com/pronamic/wp-orbis-keychains
 */
 
+/**
+ * Autoload.
+ */
+require_once __DIR__ . '/vendor/autoload_packages.php';
+
+/**
+ * Bootstrap.
+ */
 function orbis_keychains_bootstrap() {
 	include 'classes/orbis-keychains-plugin.php';
 	include 'classes/orbis-keychains-admin.php';
