@@ -1,0 +1,312 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Orbis Keychains\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/orbis-keychains\n"
+"POT-Creation-Date: 2026-09-11T11:59:06+00:00\n"
+"PO-Revision-Date: 2026-09-11 14:01+0200\n"
+"Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
+"Language-Team: Pronamic <info@pronamic.nl>\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_x:2c,1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 3.9\n"
+
+#. Plugin Name of the plugin
+#: orbis-keychains.php:3
+msgid "Orbis Keychains"
+msgstr "Orbis Keychains"
+
+#. Plugin URI of the plugin
+#: orbis-keychains.php:4
+msgid "http://www.orbiswp.com/"
+msgstr "http://www.orbiswp.com/"
+
+#. Description of the plugin
+#: orbis-keychains.php:5
+msgid ""
+"Give your whole team access to all the login details within your "
+"organization and keep a log of who used wich login details for what reason."
+msgstr ""
+"Geef je hele team toegang tot alle logingegevens binnen je organsiatie en "
+"hou een log bij van wie welke logingegevens waar voor heeft gebruikt."
+
+#. Author of the plugin
+#: orbis-keychains.php:10
+msgid "Pronamic"
+msgstr "Pronamic"
+
+#. Author URI of the plugin
+#: orbis-keychains.php:11
+msgid "http://www.pronamic.eu/"
+msgstr "http://www.pronamic.nl/"
+
+#: admin/meta-box-domain-name-keychains.php:15 includes/hosting.php:146
+msgid "FTP"
+msgstr "FTP"
+
+#: admin/meta-box-domain-name-keychains.php:23 includes/hosting.php:151
+msgid "Google Apps"
+msgstr "Google Apps"
+
+#: admin/meta-box-domain-name-keychains.php:31 includes/hosting.php:156
+msgid "WordPress"
+msgstr "WordPress"
+
+#: admin/meta-box-hosting-group-keychains.php:13
+#: templates/hosting-group-keychains.php:16
+msgid "Control Panel"
+msgstr "Bedieningspaneel"
+
+#: admin/meta-box-keychain-details.php:16 includes/post.php:325
+#: includes/post.php:368 includes/post.php:407
+msgid "URL"
+msgstr "URL"
+
+#: admin/meta-box-keychain-details.php:20
+msgid ""
+"Use an full URL: for HTTP <code>http://</code>, for FTP <code>ftp://</code>, "
+"for SFTP <code>sftp://</code>"
+msgstr ""
+"Gebruik een volledige URL: voor HTTP <code>http://</code>, voor FTP "
+"<code>ftp://</code>, voor SFTP <code>sftp://</code>"
+
+#: admin/meta-box-keychain-details.php:25 includes/post.php:329
+#: includes/post.php:371 includes/post.php:408
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: admin/meta-box-keychain-details.php:33 includes/post.php:332
+#: includes/post.php:374
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: admin/meta-box-keychain-details.php:41 includes/post.php:336
+#: includes/post.php:378 includes/post.php:409
+msgid "E-mail Address"
+msgstr "E-mailadres"
+
+#: classes/orbis-keychains-admin.php:40 includes/hosting.php:9
+#: includes/hosting.php:18 includes/hosting.php:141 includes/post.php:9
+#: includes/post.php:11 templates/hosting-group-keychains.php:10
+msgid "Keychains"
+msgstr "Sleutelhangers"
+
+#: classes/orbis-keychains-admin.php:47
+msgid "Word Count"
+msgstr "Aantal woorden"
+
+#: includes/post.php:12
+msgid "Keychain"
+msgstr "Sleutelhanger"
+
+#: includes/post.php:13
+msgctxt "orbis_keychain"
+msgid "Add New"
+msgstr "Nieuwe sleutelhanger"
+
+#: includes/post.php:14
+msgid "Add New Keychain"
+msgstr "Nieuw sleutelhanger toevoegen"
+
+#: includes/post.php:15
+msgid "Edit Keychain"
+msgstr "Sleutelhanger bewerken"
+
+#: includes/post.php:16
+msgid "New Keychain"
+msgstr "Nieuwe sleutelhanger"
+
+#: includes/post.php:17
+msgid "View Keychain"
+msgstr "Bekijk sleutelhanger"
+
+#: includes/post.php:18
+msgid "Search Keychains"
+msgstr "Sleutelhangers zoeken"
+
+#: includes/post.php:19
+msgid "No keychains found"
+msgstr "Geen sleutelhangers gevonden"
+
+#: includes/post.php:20
+msgid "No keychains found in Trash"
+msgstr "Geen sleutelhangers gevonden in prullenbak"
+
+#: includes/post.php:37
+msgctxt "slug"
+msgid "keychains"
+msgstr "sleutelhangers"
+
+#: includes/post.php:67
+msgid "Administrator"
+msgstr "Beheerder"
+
+#: includes/post.php:71
+msgid "Editor"
+msgstr "Auteur"
+
+#: includes/post.php:109
+msgid "Keychain Details"
+msgstr "Sleutelhanger details"
+
+#: includes/post.php:190
+#, php-format
+msgid "The password '%1$s' was changed to '%2$s' by %3$s."
+msgstr "Het wachtwoord '%1$s' was gewijzigd naar '%2$s' door %3$s."
+
+#: includes/post.php:233
+#, php-format
+msgid ""
+"Request password, describe with at least <strong>%d words</strong> why you "
+"need this password."
+msgstr ""
+"Wachtwoord verzoek, beschrijf met minimaal <strong>%d woorden</strong> "
+"waarom je dit wachtwoord nodig hebt."
+
+#: includes/post.php:291
+#, php-format
+msgid ""
+"This comment was an password request, the user can view the password till "
+"<strong>%s</strong>."
+msgstr ""
+"Deze reactie was een wachtwoord verzoek, de gebruiker kan het wachtwoord "
+"bekijken tot <strong>%s</strong>."
+
+#: includes/post.php:298
+#, php-format
+msgid ""
+"This comment was met <strong>%1$d words</strong> not long enough to display "
+"the password, use at least <strong>%2$d words</strong>."
+msgstr ""
+"Deze reactie was met <strong>%1$d woorden</strong> niet lang genoeg om het "
+"wachtwoord te tonen, gebruik ten minste <strong>%2$d woorden</strong>."
+
+#: includes/post.php:321
+msgid "URL Full"
+msgstr "URL volledig"
+
+#: includes/post.php:388
+msgid "Login"
+msgstr "Inloggen"
+
+#: includes/post.php:406
+msgid "Title"
+msgstr "Titel"
+
+#: includes/post.php:410
+msgid "Author"
+msgstr "Auteur"
+
+#: includes/post.php:411 includes/taxonomy.php:22
+msgid "Categories"
+msgstr "Categorieën"
+
+#: includes/post.php:412 includes/taxonomy.php:48
+msgid "Tags"
+msgstr "Tags"
+
+#: includes/post.php:413
+msgid "Comments"
+msgstr "Reacties"
+
+#: includes/post.php:414
+msgid "Date"
+msgstr "Datum"
+
+#: includes/taxonomy.php:12
+msgctxt "orbis_keychain_category"
+msgid "Categories"
+msgstr "Categorieën"
+
+#: includes/taxonomy.php:13
+msgctxt "orbis_keychain_category"
+msgid "Category"
+msgstr "Categorie"
+
+#: includes/taxonomy.php:14
+msgid "Search Categories"
+msgstr "Zoek categorieën"
+
+#: includes/taxonomy.php:15
+msgid "All Categories"
+msgstr "Alle categorieën"
+
+#: includes/taxonomy.php:16
+msgid "Parent Category"
+msgstr "Bovenliggende categorie"
+
+#: includes/taxonomy.php:17
+msgid "Parent Category:"
+msgstr "Bovenliggende categorie:"
+
+#: includes/taxonomy.php:18
+msgid "Edit Category"
+msgstr "Bewerk categorie"
+
+#: includes/taxonomy.php:19
+msgid "Update Category"
+msgstr "Update categorie"
+
+#: includes/taxonomy.php:20
+msgid "Add New Category"
+msgstr "Nieuwe categorie"
+
+#: includes/taxonomy.php:21
+msgid "New Category Name"
+msgstr "Nieuwe categorie naam"
+
+#: includes/taxonomy.php:27
+msgctxt "slug"
+msgid "keychain-categorie"
+msgstr "sleutelhanger-categorie"
+
+#: includes/taxonomy.php:38
+msgctxt "orbis_keychain_category"
+msgid "Tags"
+msgstr "Tags"
+
+#: includes/taxonomy.php:39
+msgctxt "orbis_keychain_category"
+msgid "Tag"
+msgstr "Tag"
+
+#: includes/taxonomy.php:40
+msgid "Search Tags"
+msgstr "Zoek tags"
+
+#: includes/taxonomy.php:41
+msgid "All Tags"
+msgstr "Alle tags"
+
+#: includes/taxonomy.php:42
+msgid "Parent Tag"
+msgstr "Bovenliggende tag"
+
+#: includes/taxonomy.php:43
+msgid "Parent Tag:"
+msgstr "Bovenliggende tag:"
+
+#: includes/taxonomy.php:44
+msgid "Edit Tag"
+msgstr "Bewerk tag"
+
+#: includes/taxonomy.php:45
+msgid "Update Tag"
+msgstr "Update tag"
+
+#: includes/taxonomy.php:46
+msgid "Add New Tag"
+msgstr "Nieuwe tag"
+
+#: includes/taxonomy.php:47
+msgid "New Tag Name"
+msgstr "Nieuwe tag naam"
+
+#: includes/taxonomy.php:53
+msgctxt "slug"
+msgid "keychain-tag"
+msgstr "sleutelhanger-tag"
