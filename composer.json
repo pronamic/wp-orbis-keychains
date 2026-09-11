@@ -14,7 +14,29 @@
 	},
 	"require-dev": {
 		"pronamic/wp-coding-standards": "^2.1",
-		"pronamic/pronamic-cli": "^1.1"
+		"wp-cli/dist-archive-command": "*",
+		"wp-cli/wp-cli-bundle": "*"
 	},
-	"scripts": {}
+	"scripts": {
+		"build": [
+			"rm -rf ./build/stage-1",
+			"rm -rf ./build/orbis-keychains",
+			"rsync --recursive --verbose --exclude-from=.distignore --exclude=/vendor/ ./ ./build/stage-1/",
+			"composer install --no-dev --prefer-dist --optimize-autoloader --working-dir=./build/stage-1/",
+			"rsync --recursive --verbose --exclude-from=.distignore ./build/stage-1/ ./build/orbis-keychains/",
+			"vendor/bin/wp i18n make-pot ./build/orbis-keychains/ --slug=orbis-keychains",
+			"vendor/bin/wp i18n make-mo ./build/orbis-keychains/languages/",
+			"vendor/bin/wp dist-archive ./build/orbis-keychains/ --plugin-dirname=orbis-keychains --force"
+		],
+		"dist-archive": "wp dist-archive . --plugin-dirname=orbis-keychains",
+		"make-pot": [
+			"@build",
+			"rsync --recursive --delete --verbose ./build/orbis-keychains/languages/ ./languages/",
+			"vendor/bin/wp i18n update-po ./languages/orbis-keychains.pot"
+		],
+		"phpcs": "vendor/bin/phpcs",
+		"qa": [
+			"@phpcs"
+		]
+	}
 }
